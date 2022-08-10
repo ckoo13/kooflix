@@ -34,14 +34,11 @@ export const deleteErrors = () => {
 
 
 //thunk action creators
-
-//denoting as formUser to not get confused
-    //we are getting this user from the form the a user fills out
-export const signup = formUser = dispatch => postUser(formUser)
+export const signup = user => dispatch => postUser(user)
     .then(user => dispatch(receiveCurrentUser(user)),
     errors => dispatch(receiveErrors(errors.responseJSON)));
 
-export const login = formUser = dispatch => postSession(formUser)
+export const login = user => dispatch => postSession(user)
     .then(user => dispatch(receiveCurrentUser(user)),
     errors => dispatch(receiveErrors(errors.responseJSON)));
 

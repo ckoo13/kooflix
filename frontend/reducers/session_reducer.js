@@ -6,7 +6,7 @@ const _nullSession = {
     // potentially fix logic to make the session slice of state refer to profile as key
 };
 
-const sessionReducer = (state = _nullUser, action) => {
+const sessionReducer = (state = _nullSession, action) => {
     Object.freeze(state);
 
     switch(action.type) {
