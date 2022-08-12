@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-    #take this out during final push
+    #take this out for user authentication
     skip_before_action :verify_authenticity_token
     
     helper_method :current_user, :logged_in?
