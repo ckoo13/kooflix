@@ -10,6 +10,7 @@ export default class SessionForm extends React.Component {
         }
 
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.demoLogin = this.demoLogin.bind(this);
     }
 
     handleSubmit(e) {
@@ -22,6 +23,11 @@ export default class SessionForm extends React.Component {
 
     update(field) {
         return e => this.setState({ [field]: e.currentTarget.value })
+    }
+
+    // removing errors
+    componentWillUnmount() {
+        this.props.deleteErrors();
     }
 
     renderErrors() {
@@ -37,8 +43,20 @@ export default class SessionForm extends React.Component {
             </ul>
         )
     }
+
+    demoLogin() {
+        const user = {email: 'demouser@gmail.com', password: 1234567}
+
+        this.props.processForm(user)
+            .then(() => this.props.history.push('/'))
+    }
   
     render() {
+        const demoLogin = this.props.formType === 'Log In' ? 
+            (
+                <button onClick={this.demoLogin}>Demo Login</button>
+            ) : null
+
         return (
         <div>
             <h3>{this.props.formType}</h3>
@@ -47,9 +65,10 @@ export default class SessionForm extends React.Component {
                     <input type="text" value={this.state.email} placeholder='Email' onChange={this.update('email')} />
                 </label>
                 <label>Password
-                    <input type="password" value={this.state.password} onChange={this.update('password')} />
+                    <input type="password" value={this.state.password} placeholder='password' onChange={this.update('password')} />
                 </label>
                 <input type="submit" value={this.props.formType} />
+                {demoLogin}
                 <br/>
 
                 {this.props.navLink}
