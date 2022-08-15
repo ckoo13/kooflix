@@ -1,5 +1,6 @@
 .login-wrapper {
     color: white;
+    font-family: NetflixSansMedium;
 }
 
 .login-wrapper-background {
@@ -14,15 +15,20 @@
     opacity: 0.5;
 }
 
+.session-header {
+    height: 90px;
+}
+
 .session-body {
     margin: 0 auto -236px;
     max-width: 450px;
     min-height: 100vh;
     background-color: transparent;
+    font-family: NetflixSansMedium;
 }
 
 .session-form-container {
-    min-height: 550px;
+    min-height: 610px;
     background-color: rgba(0,0,0,.75);
     border-radius: 4px;
     box-sizing: border-box;
@@ -31,6 +37,45 @@
     margin: 0;
     width: 100%;
     padding: 60px 68px 40px;
+}
+
+.session-input-container {
+    padding-bottom: 16px;
+}
+
+.nfInputPlacement {
+    position: relative;
+}
+
+.nfEmailControls {
+    border-radius: 4px;
+}
+
+.session-input-field {
+    display: flex;
+    align-items: stretch;
+    font-size: 16px;
+    padding: 15px;
+    border: 0;
+    border-radius: 4px;
+    color: #fff;
+    height: 30px;
+    line-height: 50px;
+    width: 90%;
+    background-color: #333;
+    margin-bottom: 20px;
+}
+
+.session-button {
+    border-radius: 4px;
+    color: white;
+    background-color: #e50914;
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    border: none;
+    padding: 15px 10px;
+    width: 100%;
 }
 
 #session-splash-background {

@@ -54,7 +54,7 @@ export default class SessionForm extends React.Component {
     render() {
         const demoLogin = this.props.formType === 'Log In' ? 
             (
-                <button onClick={this.demoLogin}>Demo Login</button>
+                <button className= 'session-button' onClick={this.demoLogin}>Demo Login</button>
             ) : null
 
         return (
@@ -74,10 +74,22 @@ export default class SessionForm extends React.Component {
                     <div className='session-form-container'>
                         <h1 id='session-form-title'>{this.props.formType}</h1>
                         <br/>
-                        <form className="session-form" onSubmit={this.handleSubmit}>
-                            <input className='session-input' type="text" value={this.state.email} placeholder='Email' onChange={this.update('email')} />
-                            <input className='session-input' type="password" value={this.state.password} placeholder='password' onChange={this.update('password')} />
-                            <input type="submit" value={this.props.formType} />
+                        <form className="session-form">
+                            <div className='session-input-container'>
+                                <div className='nfInputPlacement'>
+                                    <div className='nfEmailControls'>
+                                        <input className='session-input-field' type="text" value={this.state.email} placeholder='Email' onChange={this.update('email')} />
+                                    </div>
+                                </div>
+                            </div>
+                            <div className='session-input-container'>
+                                <div className='nfInputPlacement'>
+                                    <div className='nfEmailControls'>
+                                        <input className='session-input-field' type="password" value={this.state.password} placeholder='Password' onChange={this.update('password')} />
+                                    </div>
+                                </div>
+                            </div>
+                            <button className='session-button' type='submit' onSubmit={this.handleSubmit}>{this.props.formType}</button>
                             {demoLogin}
                             <br/>
 
