@@ -67,7 +67,49 @@ export default class SessionForm extends React.Component {
 
         return (
         <div>
-            <p>hello</p>
+            <div className='login-wrapper'>
+                {/* background img */}
+                <div className='login-wrapper-background'>
+                    <img id="session-splash-backgrounnd" src="https://assets.nflxext.com/ffe/siteui/vlv3/a1543997-c1fd-4946-92d3-b0a3648b92c7/b2d2e100-4fde-4432-872b-03c86a7d9613/US-en-20220808-popsignuptwoweeks-perspective_alpha_website_large.jpg" alt="" />
+                </div>
+                {/* header */}
+                <div className='session-header'>
+                    {/* this image is a placeholder for now */}
+                    <img id='session-splash-logo' src="https://assets.stickpng.com/images/580b57fcd9996e24bc43c529.png" alt="" />
+                </div>
+                {/* signup body */}
+                <div className='session-body'>
+                    <div className='session-form-container'>
+                        <h1 id='session-form-title'>{this.props.formType}</h1>
+                        <br/>
+                        <form className="session-form">
+                            <div className='session-input-container'>
+                                <div className='nfInputPlacement'>
+                                    <div className='nfEmailControls'>
+                                        <input className='session-input-field' type="text" value={this.state.email} placeholder='Email' onChange={this.update('email')} />
+                                    </div>
+                                </div>
+                            </div>
+                            <div className='session-input-container'>
+                                <div className='nfInputPlacement'>
+                                    <div className='nfEmailControls'>
+                                        <input className='session-input-field' type="password" value={this.state.password} placeholder='Password' onChange={this.update('password')} />
+                                    </div>
+                                </div>
+                            </div>
+                            <button className='session-button' type='submit' onSubmit={this.handleSubmit}>{this.props.formType}</button>
+                            {demoLogin}
+                            <br/>
+                            <div className='session-redirect-container'>
+                                {redirectText}
+                                {this.props.navLink}
+                            </div>
+                            {this.renderErrors()}
+                        </form>
+                    </div>
+                </div>
+                {/* place footer component here */}
+            </div>
         </div>
     )
   }
