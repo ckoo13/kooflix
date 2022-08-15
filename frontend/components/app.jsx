@@ -7,8 +7,6 @@ import SignupFormContainer from './session_forms/SignupFormContainer';
 const App = () => {
     return (
         <div>
-           <h1>KooFlix</h1>  
-
            <Route path='/login' component={LoginFormContainer} />
            <Route path='/signup' component={SignupFormContainer} />
         </div>

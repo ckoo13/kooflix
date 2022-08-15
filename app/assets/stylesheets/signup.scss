@@ -1,0 +1,61 @@
+.login-wrapper {
+    color: white;
+}
+
+.login-wrapper-background {
+    background-size: cover;
+    display: block;
+    height: 100%;
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+    opacity: 0.5;
+}
+
+.session-body {
+    margin: 0 auto -236px;
+    max-width: 450px;
+    min-height: 100vh;
+    background-color: transparent;
+}
+
+.session-form-container {
+    min-height: 550px;
+    background-color: rgba(0,0,0,.75);
+    border-radius: 4px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    width: 100%;
+    padding: 60px 68px 40px;
+}
+
+#session-splash-background {
+     /* Set rules to fill background */
+  min-height: 100%;
+  min-width: 1024px;
+	
+  /* Set up proportionate scaling */
+  width: 100%;
+  height: auto;
+	
+  /* Set up positioning */
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+#session-splash-logo {
+    width: 150px;
+    padding-left: 28px;
+    padding-top: 18px;
+}
+
+#session-form-title {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 28px;
+}
