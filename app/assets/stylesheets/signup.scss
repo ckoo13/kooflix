@@ -78,6 +78,10 @@
     width: 100%;
 }
 
+.session-redirect-container {
+    display: flex;
+}
+
 #session-splash-background {
      /* Set rules to fill background */
   min-height: 100%;
@@ -103,4 +107,13 @@
     font-size: 32px;
     font-weight: 700;
     margin-bottom: 28px;
+}
+
+#session-redirect-text {
+    margin-right: 10px;
+    
+}
+
+#session-redirect-link {
+    text-decoration: none;
 }

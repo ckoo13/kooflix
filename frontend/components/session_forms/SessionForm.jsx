@@ -54,8 +54,16 @@ export default class SessionForm extends React.Component {
     render() {
         const demoLogin = this.props.formType === 'Log In' ? 
             (
-                <button className= 'session-button' onClick={this.demoLogin}>Demo Login</button>
+                <button className= 'session-button' onClick={this.demoLogin}>Demo User</button>
             ) : null
+
+        const redirectText = this.props.formType === 'Log In' ?
+                (
+                    <p id="session-redirect-text">New to Netflix?</p>
+                ) :
+                (
+                    <p id="session-redirect-text">Already have an account?</p>
+                )
 
         return (
         <div>
@@ -92,8 +100,10 @@ export default class SessionForm extends React.Component {
                             <button className='session-button' type='submit' onSubmit={this.handleSubmit}>{this.props.formType}</button>
                             {demoLogin}
                             <br/>
-
-                            {this.props.navLink}
+                            <div className='session-redirect-container'>
+                                {redirectText}
+                                {this.props.navLink}
+                            </div>
                             {this.renderErrors()}
                         </form>
                     </div>
