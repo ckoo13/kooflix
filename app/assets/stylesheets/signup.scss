@@ -22,7 +22,6 @@
 .session-body {
     margin: 0 auto -236px;
     max-width: 450px;
-    min-height: 100vh;
     background-color: transparent;
     font-family: NetflixSansMedium;
 }
@@ -80,6 +79,12 @@
 
 .session-redirect-container {
     display: flex;
+    margin-bottom: 20px;
+}
+
+.session-errors-container {
+    margin-left: 2px;
+    margin-bottom: 30px;
 }
 
 #session-splash-background {
@@ -111,9 +116,14 @@
 
 #session-redirect-text {
     margin-right: 10px;
-    
+    color: rgb(118,118,118);
 }
 
 #session-redirect-link {
     text-decoration: none;
+}
+
+#session-errors {
+    margin-bottom: 10px;
+    color: rgb(198, 106, 7);
 }
