@@ -15,11 +15,27 @@ export default class SessionForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         const user = Object.assign({}, this.state);
-        this.props.processForm(user);
+        this.props.processForm(user)
+        // redirecting the user after signup/login to a frontend route
+            .then(() => this.props.history.push('/'))
     }
 
     update(field) {
         return e => this.setState({ [field]: e.currentTarget.value })
+    }
+
+    renderErrors() {
+        const { errors } = this.props;
+        
+        return (
+            <ul>
+                {errors.map((error, idx) => (
+                    <li key={`error-${idx}`}>
+                        {error}
+                    </li>
+                ))}
+            </ul>
+        )
     }
   
     render() {
@@ -28,15 +44,16 @@ export default class SessionForm extends React.Component {
             <h3>{this.props.formType}</h3>
             <form onSubmit={this.handleSubmit}>
                 <label>Email
-                    <input type="text" value={this.state.email} onChange={this.update('email')} />
+                    <input type="text" value={this.state.email} placeholder='Email' onChange={this.update('email')} />
                 </label>
                 <label>Password
-                    <input type="text" value={this.state.password} onChange={this.update('password')} />
+                    <input type="password" value={this.state.password} onChange={this.update('password')} />
                 </label>
                 <input type="submit" value={this.props.formType} />
                 <br/>
 
                 {this.props.navLink}
+                {this.renderErrors()}
             </form>
         </div>
     )

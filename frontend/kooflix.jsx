@@ -9,9 +9,25 @@ document.addEventListener("DOMContentLoaded", () => {
     window.signup = signup;
     window.login = login;
     window.logout = logout;
+
+    let store;
+
+    if (window.currentUser) {
+        // if there is a current user we hardcode our state to have that currentUser
+        const preloadedState = {
+            entities: {
+                users: { [window.currentUser.id]: window.currentUser}
+            },
+            session: {id: window.currentUser.id}
+        };
+        store = configureStore(preloadedState)
+        // reset the currentUser
+        delete window.currentUser;
+        // or we just make our state like normal
+    } else {
+        store = configureStore();
+    }
     
-    //testing store on the window
-    const store = configureStore();
 
     window.getState = store.getState;
     window.dispatch = store.dispatch;
