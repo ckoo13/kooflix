@@ -76,7 +76,7 @@ export default class SessionForm extends React.Component {
                 {/* header */}
                 <div className='session-header'>
                     {/* this image is a placeholder for now */}
-                    <img id='session-splash-logo' src="https://assets.stickpng.com/images/580b57fcd9996e24bc43c529.png" alt="" />
+                    <img id='session-splash-logo' src={window.logoUrl} alt="" />
                 </div>
                 {/* signup body */}
                 <div className='session-body'>
