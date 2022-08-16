@@ -1,6 +1,6 @@
 class Api::ProfilesController < ApplicationController
     def index
-        @profiles = current_user.profiles
+        @profiles = Profile.all
         render :index
     end
 
@@ -36,6 +36,6 @@ class Api::ProfilesController < ApplicationController
 
     private
     def profile_params
-        params.require(:profile).permit(:name, :avatar)
+        params.require(:profile).permit(:name, :avatar, :user_id)
     end
 end
