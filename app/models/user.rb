@@ -25,6 +25,10 @@ class User < ApplicationRecord
     after_initialize :ensure_session_token
 
     #Insert associations here
+    has_many :profiles,
+        class_name: :Profile,
+        primary_key: :id,
+        foreign_key: :user_id
 
     def self.find_by_credentials(email, password)
         user = User.find_by(email: email)
