@@ -5,7 +5,7 @@ export const splash = () => {
   return (
     <div className='splash-container'>
         <div className='splash-background'>
-            <img src={window.splashUrl} alt="" />
+            <img id='splash-background-image' src={window.splashUrl} alt="" />
         </div>
         <div className='splash-header'>
             <div className='splash-header-left'>

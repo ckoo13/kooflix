@@ -1,5 +1,5 @@
 import React from 'react'
-import Footer from '../footer/Footer';
+import { Link } from 'react-router-dom';
 
 export default class SessionForm extends React.Component {
     constructor(props) {
@@ -71,12 +71,14 @@ export default class SessionForm extends React.Component {
             <div className='login-wrapper'>
                 {/* background img */}
                 <div className='login-wrapper-background'>
-                    <img id="session-splash-background" src="{window.splashUrl}" alt="" />
+                    <img id="session-splash-background" src={window.splashUrl} alt="" />
                 </div>
                 {/* header */}
                 <div className='session-header'>
                     {/* this image is a placeholder for now */}
-                    <img id='session-splash-logo' src={window.logoUrl} alt="" />
+                    <Link to={'/'}>
+                        <img id='session-splash-logo' src={window.logoUrl} alt="" />
+                    </Link>
                 </div>
                 {/* signup body */}
                 <div className='session-body'>
