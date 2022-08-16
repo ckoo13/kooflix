@@ -1,4 +1,5 @@
 import React from 'react'
+import Footer from '../footer/Footer';
 
 export default class SessionForm extends React.Component {
     constructor(props) {
@@ -34,9 +35,9 @@ export default class SessionForm extends React.Component {
         const { errors } = this.props;
         
         return (
-            <ul>
+            <ul className='session-errors-container'>
                 {errors.map((error, idx) => (
-                    <li key={`error-${idx}`}>
+                    <li id="session-errors" key={`error-${idx}`}>
                         {error}
                     </li>
                 ))}
@@ -59,7 +60,7 @@ export default class SessionForm extends React.Component {
 
         const redirectText = this.props.formType === 'Log In' ?
                 (
-                    <p id="session-redirect-text">New to Netflix?</p>
+                    <p id="session-redirect-text">New to Kooflix?</p>
                 ) :
                 (
                     <p id="session-redirect-text">Already have an account?</p>
@@ -75,14 +76,14 @@ export default class SessionForm extends React.Component {
                 {/* header */}
                 <div className='session-header'>
                     {/* this image is a placeholder for now */}
-                    <img id='session-splash-logo' src="https://assets.stickpng.com/images/580b57fcd9996e24bc43c529.png" alt="" />
+                    <img id='session-splash-logo' src={window.logoUrl} alt="" />
                 </div>
                 {/* signup body */}
                 <div className='session-body'>
                     <div className='session-form-container'>
                         <h1 id='session-form-title'>{this.props.formType}</h1>
                         <br/>
-                        <form className="session-form">
+                        <form onSubmit={this.handleSubmit} className="session-form">
                             <div className='session-input-container'>
                                 <div className='nfInputPlacement'>
                                     <div className='nfEmailControls'>
@@ -97,18 +98,17 @@ export default class SessionForm extends React.Component {
                                     </div>
                                 </div>
                             </div>
-                            <button className='session-button' type='submit' onSubmit={this.handleSubmit}>{this.props.formType}</button>
+                            {this.renderErrors()}
+                            <input className='session-button' type='submit' value={this.props.formType} />
                             {demoLogin}
                             <br/>
                             <div className='session-redirect-container'>
                                 {redirectText}
                                 {this.props.navLink}
                             </div>
-                            {this.renderErrors()}
                         </form>
                     </div>
                 </div>
-                {/* place footer component here */}
             </div>
         </div>
     )
