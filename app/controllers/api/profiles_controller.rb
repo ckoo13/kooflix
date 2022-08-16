@@ -1,4 +1,4 @@
-class ProfilesController < ApplicationController
+class Api::ProfilesController < ApplicationController
     def index
         @profiles = current_user.profiles
         render :index
@@ -15,11 +15,23 @@ class ProfilesController < ApplicationController
     end
 
     def update
-        
+        @profile = Profile.find(params[:id])
+
+        if @profile.update(profile_params)
+            render :show
+        else
+            render json: ['There was an error updating the profile'], status: 422
+        end
     end
 
     def destroy
+        @profile = Profile.find(params[:id])
 
+        if @profile
+            @profile.destroy
+        else
+            render json: ['Cannot delete this profile'], status: 422
+        end
     end
 
     private
