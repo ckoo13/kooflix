@@ -9,9 +9,9 @@ import { splash } from './splash/splash';
 const App = () => {
     return (
         <div>
-           <Route path='/' component={splash} />
            <AuthRoute path='/login' component={LoginFormContainer} />
            <AuthRoute path='/signup' component={SignupFormContainer} />
+           <Route path='/' component={splash} />
         </div>
     )
 };
