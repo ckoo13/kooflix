@@ -6,6 +6,14 @@ export const fetchProfiles = userId => {
     })
 };
 
+// get a specific profile
+export const fetchProfile = profileId => {
+    return $.ajax({
+        url: `/api/profiles/${profileId}`,
+        method: 'GET'
+    })
+}
+
 // create a profile
 export const postProfile = profile => {
     return $.ajax({

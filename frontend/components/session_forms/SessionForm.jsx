@@ -19,7 +19,7 @@ export default class SessionForm extends React.Component {
         const user = Object.assign({}, this.state);
         this.props.processForm(user)
         // redirecting the user after signup/login to a frontend route
-            .then(() => this.props.history.push('/browse'))
+            .then(() => this.props.history.push('/profiles'))
     }
 
     update(field) {
@@ -49,7 +49,7 @@ export default class SessionForm extends React.Component {
         const user = {email: 'demouser@gmail.com', password: 1234567}
 
         this.props.processForm(user)
-            .then(() => this.props.history.push('/browse'))
+            .then(() => this.props.history.push('/profiles'))
     }
   
     render() {

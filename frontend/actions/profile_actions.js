@@ -1,4 +1,4 @@
-import { fetchProfiles, postProfile, patchProfile, deleteProfile } from "../util/profile_util";
+import { fetchProfiles, fetchProfile, postProfile, patchProfile, deleteProfile } from "../util/profile_util";
 
 // export constants
 export const RECEIVE_ALL_PROFILES = 'RECEIVE_ALL_PROFILES';
@@ -32,6 +32,9 @@ export const obliterateProfile = profileId => {
 // thunk action creators
 export const getProfiles = userId => dispatch => fetchProfiles(userId)
     .then(profiles => dispatch(receiveProfiles(profiles)));
+
+export const getProfile = profileId => dispatch => fetchProfile(profileId)
+    .then(profile => dispatch(receiveProfile(profile)));
 
 export const createProfile = profile => dispatch => postProfile(profile)
     .then(profile => dispatch(receiveProfile(profile)));
