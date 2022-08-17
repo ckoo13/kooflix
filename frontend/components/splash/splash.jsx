@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-export const splash = () => {
+export const Splash = () => {
   return (
     <div className='splash-container'>
         <div className='splash-background'>
