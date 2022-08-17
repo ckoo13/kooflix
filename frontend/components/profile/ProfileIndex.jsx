@@ -8,7 +8,7 @@ class ProfileIndex extends React.Component {
     }
 
     componentDidMount() {
-        this.props.getProfiles();
+        this.props.getProfiles(this.props.currentUser);
     }
 
     render() {

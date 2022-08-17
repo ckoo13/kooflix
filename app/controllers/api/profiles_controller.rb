@@ -1,6 +1,10 @@
 class Api::ProfilesController < ApplicationController
+    before_action :require_logged_in
+
     def index
-        @profiles = Profile.all
+        #where the user_id of the profile matches current_user id)
+        id = current_user.id
+        @profiles = Profile.where(user_id: id)
         render :index
     end
 
