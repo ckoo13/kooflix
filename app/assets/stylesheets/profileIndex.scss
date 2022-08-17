@@ -1,0 +1,59 @@
+.profiles-index-main-container {
+    color: white;
+    font-family: NetflixSans;
+}
+
+.profiles-images-list {
+    display: flex;
+}
+
+.profiles-header {
+    margin-bottom: 100px;
+}
+
+.profiles-gate-container {
+    text-align: center;
+}
+
+.profiles-index-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profiles-index-container h1 {
+    font-size: 48px;
+    font-weight: 500;
+    margin-bottom: 25px;
+}
+
+.profiles-images-container {
+    margin-bottom: 60px;
+}
+
+.profiles-splash-logo {
+    width: 150px;
+    padding-left: 28px;
+    padding-top: 18px;
+}
+
+.profile-image {
+    height: 10vw;
+    max-height: 200px;
+    max-width: 200px;
+    padding: 10px 10px;
+    margin: auto 10px;
+    border-radius: 6px;
+}
+
+.profile-image-link {
+    text-decoration: none;
+}
+
+.profile-image-name {
+    color: rgb(128, 128, 128);
+    font-family: NetflixSansLight;
+    margin-top: 8px;
+    text-decoration: none;
+
+}
