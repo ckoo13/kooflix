@@ -1,6 +1,5 @@
 import React from "react";
 import { Link, Redirect } from "react-router-dom";
-import NavBarContainer from "../navbar/NavBarContainer";
 
 class ProfileIndex extends React.Component {
     constructor(props){
@@ -38,23 +37,32 @@ class ProfileIndex extends React.Component {
         return (
             <div className="profiles-index-main-container">
                 <div className="profiles-header">
-                    <Link to={'/browse'}>
-                        <img className="profiles-splash-logo" src={logoUrl} alt="" />
-                    </Link>
+                    <img className="profiles-splash-logo" src={logoUrl} alt="" />
                 </div>
                 <div className="profiles-gate-container">
                     <div className="profiles-index-container">
                         <h1>Who's watching?</h1>
                         <div className="profiles-images-container">
                             <ul className="profiles-images-list">
-                                {renderProfiles} 
+                                {renderProfiles}
+                                <li>
+                                    <div>
+                                        <Link className="profile-image-link" to={'/profiles/edit'}>
+                                            <div>
+                                                <img className="profile-image" src={addProfileURL} alt="" />
+                                                <p className="profile-image-name">Add Profile</p>
+                                            </div>
+                                        </Link>
+                                    </div>
+                                </li>
                             </ul>
                         </div>
-                        <button id="manage-profiles-button">Manage Profiles</button>
+                        {/* this might have to be an event handler later */}
+                        <Link id="manage-profiles-link" to={'/profiles/edit'}>
+                            <button id="manage-profiles-button">Manage Profiles</button>
+                        </Link>
                     </div>
                 </div>
-                {/* delete later this is the logout button */}
-                <NavBarContainer />
             </div>
         )
     }
