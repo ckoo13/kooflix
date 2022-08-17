@@ -2,13 +2,16 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
-import { signup, login, logout } from './actions/session_actions'
+
+// testing api util functions
+import { getProfiles, createProfile, updateProfile, removeProfile} from './actions/profile_actions'
 
 document.addEventListener("DOMContentLoaded", () => {
     //testing purposes
-    window.signup = signup;
-    window.login = login;
-    window.logout = logout;
+    window.profiles = getProfiles;
+    window.createProfile = createProfile;
+    window.updateProfile = updateProfile;
+    window.removeProfile = removeProfile;
 
     let store;
 
@@ -28,7 +31,6 @@ document.addEventListener("DOMContentLoaded", () => {
         store = configureStore();
     }
     
-
     window.getState = store.getState;
     window.dispatch = store.dispatch;
 
