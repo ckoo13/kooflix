@@ -1,0 +1,106 @@
+.edit-profile-form-whole-container {
+    color: white;
+    font-family: NetflixSans;
+}
+
+.edit-form-header {
+    margin-bottom: 100px;
+}
+
+.edit-form-header img {
+    width: 150px;
+    padding-left: 28px;
+    padding-top: 18px;
+}
+
+.edit-profile-main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+
+.edit-profile-description h1 {
+    font-size: 52px;
+    margin-bottom: 15px;
+}
+
+.edit-profile-description h2 {
+    font-family: NetflixSansLight;
+    margin-bottom: 15px;
+    color: #666;
+}
+
+.edit-profile-form {
+    display: flex;
+    align-items: center;
+    padding: 2em 0;
+    border-bottom: 1px solid #333;
+    border-top: 1px solid #333;
+    margin-bottom: 25px;
+}
+
+.profile-avatar {
+    margin-right: 1.5vw;
+}
+
+.profile-avatar img {
+    max-height: 125px;
+    max-width: 125px;
+    border-radius: 4px;
+}
+
+.edit-profile-name-input {
+    font-size: 13px;
+    color: white;
+}
+
+.edit-profile-name-input input {
+    font-size: 16px;
+    background: #666;
+    border: 1px solid transparent;
+    box-sizing: border-box;
+    color: white;
+    height: 2em;
+    margin: 0 0.8em 0 0;
+    padding: 0.2em 0.6em;
+    text-indent: 0.1vw;
+    width: 18em;
+}
+
+.edit-profile-buttons-container button {
+    font-size: 16px;
+}
+
+#edit-save-button {
+    display: inline-block;
+    margin-right: 20px;
+    background-color: white;
+    border: 1px solid white;
+    color: black;
+    font-weight: 400;
+    padding: 0.5em 1.5em;
+    cursor: pointer;
+}
+
+#edit-cancel-button {
+    display: inline-block;
+    margin-right: 20px;
+    background-color: transparent;
+    border: 1px solid grey;
+    color: grey;
+    cursor: pointer;
+    padding: 0.5em 1.5em;
+}
+
+#edit-delete-button {
+    display: inline-block;
+    margin-right: 20px;
+    background-color: transparent;
+    border: 1px solid grey;
+    color: grey;
+    cursor: pointer;
+    padding: 0.5em 1.5em;
+}
+

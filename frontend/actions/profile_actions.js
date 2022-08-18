@@ -42,5 +42,5 @@ export const createProfile = profile => dispatch => postProfile(profile)
 export const updateProfile = profile => dispatch => patchProfile(profile)
     .then(profile => dispatch(receiveProfile(profile)))
 
-export const removeProfile = profileId => dispatch => obliterateProfile(profileId)
-    .then(() => dispatch(deleteProfile(profileId)))
+export const removeProfile = profileId => dispatch => deleteProfile(profileId)
+    .then(() => dispatch(obliterateProfile(profileId)))
