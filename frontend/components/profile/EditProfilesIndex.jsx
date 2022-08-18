@@ -46,7 +46,7 @@ class EditProfilesIndex extends React.Component {
                                 {renderProfiles}
                                 <li>
                                     <div>
-                                        <Link className="profile-image-link" to={'/profiles/edit'}>
+                                        <Link className="profile-image-link" to={'/profiles/new'}>
                                             <div>
                                                 <img className="profile-image-edit" src={addProfileURL} alt="" />
                                                 <p className="profile-image-name-edit">Add Profile</p>
