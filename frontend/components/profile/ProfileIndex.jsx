@@ -12,7 +12,7 @@ class ProfileIndex extends React.Component {
         this.props.getProfiles(this.props.currentUser);
     }
 
-    handleProfileClick(e, id) {
+    handleSubmit(e, id) {
         e.preventDefault();
         this.props.getCurrentProfile(id)
             .then(() => this.props.history.push('/browse'));
@@ -26,7 +26,7 @@ class ProfileIndex extends React.Component {
                 return (
                     <li key={profile.id}>
                         <div>
-                            <Link onClick={(e) => this.handleProfileClick(e, profile.id)} className="profile-image-link" to={'/browse'}>
+                            <Link onClick={(e) => this.handleSubmit(e, profile.id)} className="profile-image-link" to={'/browse'}>
                                 <div className="avatar-wrapper">
                                     <img className="profile-image" src={profileURL} alt="" />
                                     <p className="profile-image-name">{profile.name}</p>
