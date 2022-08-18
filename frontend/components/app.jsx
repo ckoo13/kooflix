@@ -5,7 +5,7 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import LoginFormContainer from './session_forms/LoginFormContainer';
 import SignupFormContainer from './session_forms/SignupFormContainer';
 import ProfileIndexContainer from './profile/ProfileIndexContainer';
-import { Splash } from './splash/Splash';
+import Splash from './splash/Splash';
 import Browse from './browse/Browse';
 import EditProfilesIndexContainer from './profile/EditProfilesIndexContainer';
 import EditProfileFormContainer from './profile/EditProfileFormContainer';
