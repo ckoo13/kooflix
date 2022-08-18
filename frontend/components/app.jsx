@@ -18,7 +18,6 @@ const App = () => {
                 <ProtectedRoute path='/browse' component={Browse} />
                 <AuthRoute path='/login' component={LoginFormContainer} />
                 <AuthRoute path='/signup' component={SignupFormContainer} />
-                <ProtectedRoute path='/profiles' component={ProfileIndexContainer} />
                 <ProtectedRoute path='/profiles' exact component={ProfileIndexContainer} />
                 <ProtectedRoute path='/profiles/edit' exact component={EditProfilesIndexContainer} />
                 <ProtectedRoute path='/profiles/:profileid/edit' exact component={EditProfileFormContainer} />

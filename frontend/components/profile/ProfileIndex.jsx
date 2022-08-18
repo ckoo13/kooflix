@@ -5,7 +5,7 @@ class ProfileIndex extends React.Component {
     constructor(props){
         super(props);
 
-        this.handleProfileClick = this.handleProfileClick.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     componentDidMount() {
