@@ -18,7 +18,7 @@ class EditProfilesIndex extends React.Component {
                 return (
                     <li key={profile.id}>
                         <div>
-                            <Link className="profile-image-link" to={'/browse'}>
+                            <Link className="profile-image-link" to={`/profiles/${profile.id}/edit`}>
                                 <div className="avatar-wrapper">
                                     <img className="profile-image" src={editProfileURL} alt="" />
                                     <p className="profile-image-name">{profile.name}</p>

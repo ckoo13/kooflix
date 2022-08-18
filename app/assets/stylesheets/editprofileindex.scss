@@ -38,7 +38,6 @@
 }
 
 .profile-image-edit {
-    filter: brightness(50%);
     height: 10vw;
     max-height: 200px;
     max-width: 200px;
@@ -65,11 +64,11 @@
 
 #edit-profiles-done{
     font-size: 18px;
-    font-family: NetflixSans;
+    font-family: NetflixSansMedium;
     background: rgb(255, 255, 255);
     border: 1px solid rgb(255, 255, 255);
     color: black;
-    font-weight: 700;
+    font-weight: 600;
     cursor: pointer;
     display: block;
     margin: 2em 0 1em;

@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { getProfiles, getProfile } from "../../actions/profile_actions";
 import EditProfilesIndex from "./EditProfilesIndex";
+import { withRouter } from "react-router-dom";
 
 const mapStateToProps = state => {
     return {
@@ -17,4 +18,4 @@ const mapDispatchToProps = dispatch => {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(EditProfilesIndex)
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(EditProfilesIndex))

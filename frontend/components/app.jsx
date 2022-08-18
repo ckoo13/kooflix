@@ -8,6 +8,7 @@ import ProfileIndexContainer from './profile/ProfileIndexContainer';
 import { Splash } from './splash/Splash';
 import Browse from './browse/Browse';
 import EditProfilesIndexContainer from './profile/EditProfilesIndexContainer';
+import EditProfileFormContainer from './profile/EditProfileFormContainer';
 
 const App = () => {
     return (
@@ -17,7 +18,9 @@ const App = () => {
                 <AuthRoute path='/login' component={LoginFormContainer} />
                 <AuthRoute path='/signup' component={SignupFormContainer} />
                 <ProtectedRoute path='/profiles' exact component={ProfileIndexContainer} />
-                <ProtectedRoute path='/profiles/edit' exact component={EditProfilesIndexContainer} />                <AuthRoute path='/' exact component={Splash} />
+                <ProtectedRoute path='/profiles/edit' exact component={EditProfilesIndexContainer} />
+                <ProtectedRoute path='/profiles/:profileid/edit' exact component={EditProfileFormContainer} />
+                <AuthRoute path='/' exact component={Splash} />
             </Switch>
         </div>
     )
