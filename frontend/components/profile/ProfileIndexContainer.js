@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { getProfiles, getProfile } from "../../actions/profile_actions";
+import { getProfiles, getProfile, getCurrentProfile} from "../../actions/profile_actions";
 import ProfileIndex from "./ProfileIndex";
 
 const mapStateToProps = state => {
@@ -13,7 +13,8 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     return {
         getProfiles: userId => dispatch(getProfiles(userId)),
-        getProfile: profileId => dispatch(getProfile(profileId))
+        getProfile: profileId => dispatch(getProfile(profileId)),
+        getCurrentProfile: profileId => dispatch(getCurrentProfile(profileId))
     }
 };
 

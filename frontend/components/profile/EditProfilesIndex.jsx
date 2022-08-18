@@ -1,21 +1,13 @@
 import React from "react";
-import { Link, Redirect } from "react-router-dom";
+import { Link } from "react-router-dom";
 
-class ProfileIndex extends React.Component {
+class EditProfilesIndex extends React.Component {
     constructor(props){
-        super(props);
-
-        this.handleProfileClick = this.handleProfileClick.bind(this);
-    }
-
+        super(props)
+    }  
+    
     componentDidMount() {
         this.props.getProfiles(this.props.currentUser);
-    }
-
-    handleSubmit(e, id) {
-        e.preventDefault();
-        this.props.getCurrentProfile(id)
-            .then(() => this.props.history.push('/browse'));
     }
 
     renderProfiles() {
@@ -26,9 +18,9 @@ class ProfileIndex extends React.Component {
                 return (
                     <li key={profile.id}>
                         <div>
-                            <Link onClick={(e) => this.handleSubmit(e, profile.id)} className="profile-image-link" to={'/browse'}>
+                            <Link className="profile-image-link" to={`/profiles/${profile.id}/edit`}>
                                 <div className="avatar-wrapper">
-                                    <img className="profile-image" src={profileURL} alt="" />
+                                    <img className="profile-image" src={editProfileURL} alt="" />
                                     <p className="profile-image-name">{profile.name}</p>
                                 </div>
                              </Link>
@@ -41,7 +33,6 @@ class ProfileIndex extends React.Component {
 
     render() {
         const renderProfiles = this.renderProfiles()
-
         return (
             <div className="profiles-index-main-container">
                 <div className="profiles-header">
@@ -49,7 +40,7 @@ class ProfileIndex extends React.Component {
                 </div>
                 <div className="profiles-gate-container">
                     <div className="profiles-index-container">
-                        <h1>Who's watching?</h1>
+                        <h1>Manage Profiles:</h1>
                         <div className="profiles-images-container">
                             <ul className="profiles-images-list">
                                 {renderProfiles}
@@ -57,8 +48,8 @@ class ProfileIndex extends React.Component {
                                     <div>
                                         <Link className="profile-image-link" to={'/profiles/new'}>
                                             <div>
-                                                <img className="profile-image" src={addProfileURL} alt="" />
-                                                <p className="profile-image-name">Add Profile</p>
+                                                <img className="profile-image-edit" src={addProfileURL} alt="" />
+                                                <p className="profile-image-name-edit">Add Profile</p>
                                             </div>
                                         </Link>
                                     </div>
@@ -66,14 +57,14 @@ class ProfileIndex extends React.Component {
                             </ul>
                         </div>
                         {/* this might have to be an event handler later */}
-                        <Link id="manage-profiles-link" to={'/profiles/edit'}>
-                            <button id="manage-profiles-button">Manage Profiles</button>
+                        <Link id="manage-profiles-link" to={'/profiles'}>
+                            <button id="edit-profiles-done">Done</button>
                         </Link>
                     </div>
                 </div>
             </div>
         )
     }
-}
+};
 
-export default ProfileIndex;
+export default EditProfilesIndex

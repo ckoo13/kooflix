@@ -3,6 +3,7 @@ import { fetchProfiles, fetchProfile, postProfile, patchProfile, deleteProfile }
 // export constants
 export const RECEIVE_ALL_PROFILES = 'RECEIVE_ALL_PROFILES';
 export const RECEIVE_PROFILE = 'RECEIVE_PROFILE';
+export const RECEIVE_CURRENT_PROFILE = 'RECEIVE_CURRENT_PROFILE';
 export const OBLITERATE_PROFILE = 'OBLITERATE_PROFILE';
 
 
@@ -21,6 +22,13 @@ export const receiveProfile = profile => {
     }
 };
 
+export const receiveCurrentProfile = profileId => {
+    return {
+        type: RECEIVE_CURRENT_PROFILE,
+        profileId
+    }
+};
+
 export const obliterateProfile = profileId => {
     return {
         type: OBLITERATE_PROFILE,
@@ -36,11 +44,14 @@ export const getProfiles = userId => dispatch => fetchProfiles(userId)
 export const getProfile = profileId => dispatch => fetchProfile(profileId)
     .then(profile => dispatch(receiveProfile(profile)));
 
+export const getCurrentProfile = profileId => dispatch => fetchProfile(profileId)
+    .then(profile => dispatch(receiveCurrentProfile(profileId)));
+
 export const createProfile = profile => dispatch => postProfile(profile)
     .then(profile => dispatch(receiveProfile(profile)));
 
 export const updateProfile = profile => dispatch => patchProfile(profile)
     .then(profile => dispatch(receiveProfile(profile)))
 
-export const removeProfile = profileId => dispatch => obliterateProfile(profileId)
-    .then(() => dispatch(deleteProfile(profileId)))
+export const removeProfile = profileId => dispatch => deleteProfile(profileId)
+    .then(() => dispatch(obliterateProfile(profileId)))
