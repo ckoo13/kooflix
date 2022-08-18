@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-export const Splash = () => {
+const Splash = () => {
   return (
     <div className='splash-container'>
         <div className='splash-background'>
@@ -37,3 +37,5 @@ export const Splash = () => {
     </div>
   )
 }
+
+export default Splash;
