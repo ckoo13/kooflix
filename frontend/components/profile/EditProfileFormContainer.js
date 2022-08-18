@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { removeProfile, updateProfile } from "../../actions/profile_actions";
+import { getProfile, removeProfile, updateProfile } from "../../actions/profile_actions";
 import EditProfileForm from "./EditProfileForm";
 
 const mapStateToProps = (state, ownProps) => {

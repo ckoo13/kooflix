@@ -8,6 +8,11 @@ class EditProfileForm extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
+    componentDidMount() {
+        const profile = this.props.getProfile(this.props.match.params.profileid)
+        return profile;
+    }
+
     handleSubmit(e){
         e.preventDefault();
         // call the editAction
@@ -15,6 +20,8 @@ class EditProfileForm extends React.Component {
     }
 
     render() {
+        const profile = this.componentDidMount();
+
         return (
             <div>
                 <div className="header">
@@ -23,18 +30,19 @@ class EditProfileForm extends React.Component {
                 <div className="edit-profile-main-container">
                     <div className="edit-profile-description">
                         <h1>{this.props.formType}</h1>
-                        <h3>Edit a profile for another person watching Netflix</h3>
+                        <h3>Edit the name for this profile!</h3>
                     </div>
                     <div className="edit-profile-form">
                         <div className="profile-avatar">
-
+                            <img src={profileURL} alt="" />
                         </div>
                         <div className="edit-profile-name-input">
-                            <input type="text" value={this.props.profile.name} placeholder="Name" />
+                            <input type="text" value={profile.name} placeholder="Name" />
                         </div>
                     </div>
-                    <button></button>
-                    <button></button>
+                    <button>Save</button>
+                    <button>Cancel</button>
+                    <button>Delete</button>
                 </div>
             </div>
         )
