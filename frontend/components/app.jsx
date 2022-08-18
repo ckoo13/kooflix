@@ -7,6 +7,7 @@ import SignupFormContainer from './session_forms/SignupFormContainer';
 import ProfileIndexContainer from './profile/ProfileIndexContainer';
 import { Splash } from './splash/Splash';
 import Browse from './browse/Browse';
+import EditProfilesIndexContainer from './profile/EditProfilesIndexContainer';
 
 const App = () => {
     return (
@@ -15,8 +16,8 @@ const App = () => {
                 <ProtectedRoute path='/browse' component={Browse} />
                 <AuthRoute path='/login' component={LoginFormContainer} />
                 <AuthRoute path='/signup' component={SignupFormContainer} />
-                <ProtectedRoute path='/profiles' component={ProfileIndexContainer} />
-                <AuthRoute path='/' exact component={Splash} />
+                <ProtectedRoute path='/profiles' exact component={ProfileIndexContainer} />
+                <ProtectedRoute path='/profiles/edit' exact component={EditProfilesIndexContainer} />                <AuthRoute path='/' exact component={Splash} />
             </Switch>
         </div>
     )
