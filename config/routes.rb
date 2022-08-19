@@ -12,6 +12,8 @@ Rails.application.routes.draw do
 
     resources :profiles, only: [:show, :update, :destroy]
 
+    resources :videos, only: [:index, :show]
+
     resource :session, only: [:create, :destroy]
   end
 end
