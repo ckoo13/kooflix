@@ -4,14 +4,12 @@ import configureStore from './store/store';
 import Root from './components/root';
 
 // testing api util functions
-import { getProfiles, createProfile, updateProfile, removeProfile} from './actions/profile_actions'
+import { fetchVideos, fetchVideo } from './util/video_util'
 
 document.addEventListener("DOMContentLoaded", () => {
     //testing purposes
-    window.profiles = getProfiles;
-    window.createProfile = createProfile;
-    window.updateProfile = updateProfile;
-    window.removeProfile = removeProfile;
+    window.videos = fetchVideos;
+    window.video = fetchVideo;
 
     let store;
 
