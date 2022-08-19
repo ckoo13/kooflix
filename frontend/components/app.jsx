@@ -5,17 +5,17 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import LoginFormContainer from './session_forms/LoginFormContainer';
 import SignupFormContainer from './session_forms/SignupFormContainer';
 import ProfileIndexContainer from './profile/ProfileIndexContainer';
-import Browse from './browse/Browse';
 import EditProfilesIndexContainer from './profile/EditProfilesIndexContainer';
 import EditProfileFormContainer from './profile/EditProfileFormContainer';
 import AddProfileContainer from './profile/AddProfileContainer';
 import Splash from './splash/Splash';
+import BrowseContainer from './browse/BrowseContainer';
 
 const App = () => {
     return (
         <div>
             <Switch>
-                <ProtectedRoute path='/browse' component={Browse} />
+                <ProtectedRoute path='/browse' component={BrowseContainer} />
                 <AuthRoute path='/login' component={LoginFormContainer} />
                 <AuthRoute path='/signup' component={SignupFormContainer} />
                 <ProtectedRoute path='/profiles' exact component={ProfileIndexContainer} />
