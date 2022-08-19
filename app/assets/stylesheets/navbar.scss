@@ -1,0 +1,100 @@
+.navbar-container {
+    font-family: NetflixSans;
+    width: 100%;
+    height: 90px;
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+}
+
+.navbar-left {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar-left div {
+    margin: 0 10px;
+}
+
+.navbar-left-link {
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+.navbar-right-container {
+    display: flex;
+    align-items: center;
+    margin-right: 40px;
+}
+
+.navbar-profile-image {
+    height: 10vw;
+    max-height: 36px;
+    max-width: 36px;
+    margin-left: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#dropdown {
+    position: relative;
+}
+
+#dropdown:hover #dropdown-links{
+    display: flex;
+}
+
+#dropdown #dropdown-links {
+    position: absolute;
+    background: grey;
+    height: 250px;
+    width: 175px;
+    margin-right: 50px;
+    z-index: 1;
+    left: -150px;
+    top: 50px;
+    padding: 10px 15px 10px;
+    display: none;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: column;
+    background-color: rgba(0,0,0,0.9);
+    border: 1px solid rgb(41, 41, 41);
+    box-shadow: rgba(0,0,0,0.75) 0px 3px 10px;
+    transition: all 0.4s ease;
+}
+
+#dropdown .dropdown-link {
+    margin-left: 8px;
+}
+
+#dropdown-manage-profiles {
+    text-decoration: none;
+    margin-bottom: 20px;
+}
+
+#dropdown-signout {
+    text-decoration: none;
+}
+
+#dropdown-profiles-li {
+    display: flex;
+    align-items: center;
+    margin-left: -10px;
+}
+
+#dropdown-profiles-name {
+    cursor: pointer;
+    margin-left: 5px;
+}
+
+#line {
+    width: 175px;
+    border-top: 1px solid rgb(107, 107, 107);
+}
+
+#navbar-logo {
+    width: 150px;
+    padding-left: 28px;
+}

@@ -15,9 +15,8 @@ class Browse extends React.Component {
     render() {
       return (
           <div>
-              <h1>Main Page</h1>
-              <img id='test' src='' alt="" />
               <NavbarContainer />
+              {/* <img id='test' src='' alt="" /> */}
           </div>
         )
     }
