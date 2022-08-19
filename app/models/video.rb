@@ -21,6 +21,5 @@ class Video < ApplicationRecord
     validates :description, :rating, :runtime, :title, :video_type, presence: true
 
     has_one_attached :thumbnail
-    has_one_attached :mini_clip
     has_one_attached :video
 end
