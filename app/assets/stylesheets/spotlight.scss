@@ -1,4 +1,47 @@
-.spotlight-video {
+.spotlight-container {
+    -webkit-overflow-scrolling: none;
+    overflow: hidden;
+    overscroll-behavior-x: none;
+
+}
+
+#spotlight-video {
     max-width: fit-content;
     min-height: 600px;
+    -moz-transform:scale(1.5);
+    -webkit-transform:scale(1.5);
+     -o-transform:scale(1.5);
+    -ms-transform:scale(1.5);
+    transform:scale(1.5);
+}
+
+#spotlight-video-info {
+    position: absolute;
+    top: 18vw;
+    left: 4vw;
+}
+
+#spotlight-video-info * {
+    margin: 10px;
+}
+
+#spotlight-video-info img {
+    width: 50%;
+}
+
+#spotlight-video-info p {
+    font-family: NetflixSansLight;
+    width: 30%;
+}
+
+#spotlight-video-info button {
+    background-color: white;
+    font-size: 20px;
+    font-weight: 700px;
+    color: black;
+    font-family: NetflixSans;
+    padding: 0.5rem 1.5rem;
+    border: 0;
+    border-radius: 4px;
+    cursor: pointer;
 }
