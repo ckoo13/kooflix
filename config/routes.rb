@@ -14,6 +14,8 @@ Rails.application.routes.draw do
 
     resources :videos, only: [:index, :show]
 
+    resources :genres, only: [:index, :show]
+
     resource :session, only: [:create, :destroy]
   end
 end
