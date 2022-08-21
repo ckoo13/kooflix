@@ -8,41 +8,38 @@ class Spotlight extends React.Component {
         this._unmute = this._unmute.bind(this);
     };
 
-    componentDidMount() {
-        const video = this.props.getVideo(1)
-            .then(() => this.setState(video));
-    }
-
     _unmute() {
         const videoDiv = document.getElementById('spotlight-video')
         const video = videoDiv.lastElementChild;
         // somehow need to fix this
-        video['muted'] = true;
+        video['muted'] = !video['muted'];
     }
     
     render() {
-        // console.log(this.props.video)
         if (!this.props.video) {
             return (
                 <div>
-                    <h1>This is my video</h1>
+                    <h1>The videos have not loaded yet</h1>
                 </div>
             )
         } else {
             return (
-                <div className="spotlight-container">
+                // instead of autoplaying use event listeners to set manually play so we don't run into mute issue
+                <div onClick={this._unmute} className="spotlight-container">
                     <ReactPlayer url={this.props.video.videoUrl} 
                         playing={true}
                         width='150%'
                         height='150%'
                         muted={true}
-                        onPlay={this._unmute}
                         loop={true}
                         id='spotlight-video'/>
                     <div id="spotlight-video-info">
                         <img src={window.itaewonClassLogoUrl} alt="" />
                         <p>{this.props.video.description}</p>
-                        <button>▶ Play</button>
+                        <div className="spotlight-button-container">
+                            <button id="spotlight-play-button">▶ Play</button>
+                            <button id="spotlight-audio-button"><img id="spotlight-audio-icon" src={window.audioIconUrl} alt="" /></button>
+                        </div>
                     </div>
                 </div>
             )

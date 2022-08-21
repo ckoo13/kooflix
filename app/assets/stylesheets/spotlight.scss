@@ -34,7 +34,7 @@
     width: 30%;
 }
 
-#spotlight-video-info button {
+#spotlight-play-button {
     background-color: white;
     font-size: 20px;
     font-weight: 700px;
@@ -44,4 +44,26 @@
     border: 0;
     border-radius: 4px;
     cursor: pointer;
+}
+
+.spotlight-button-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#spotlight-audio-button {
+    max-height: 60px;
+    max-width: 60px;
+    cursor: pointer;
+    border-radius: 50%;
+    border: 2px solid white;
+    box-shadow: rgb(20, 20, 20);
+    margin-top: 0px;
+    margin-bottom: 0px;
+    background-color: transparent;
+}
+
+#spotlight-audio-icon {
+    margin-left: 10px;
 }
