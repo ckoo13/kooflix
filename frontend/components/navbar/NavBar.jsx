@@ -5,13 +5,31 @@ class NavBar extends React.Component {
     constructor(props){
         super(props)
 
+        this.state = {
+            color: false
+        }
+
         this._dropdownProfiles = this._dropdownProfiles.bind(this)
+        this._changeColor = this._changeColor.bind(this)
+    }
+
+    componentDidMount() {
+        console.log(window)
+        window.addEventListener('scroll', this._changeColor)
     }
 
     _handleProfileClick(e, id) {
         e.preventDefault();
         this.props.getCurrentProfile(id)
             .then(() => this.props.history.push('/browse'));
+    }
+
+    _changeColor = () => {
+        if (window.scrollY >= 150) {
+            this.setState({color: true})
+        } else {
+            this.setState({color: false})
+        }
     }
 
     _dropdownProfiles() {
@@ -29,7 +47,7 @@ class NavBar extends React.Component {
 
     render() {
         return (
-            <header className="navbar-container">
+            <header className={this.state.color ? "navbar-container" : "navbar-container-bg"}>
                 <div className="navbar-left">
                     <Link to={'/browse'}>
                         <img id='navbar-logo' src={window.logoUrl} alt="" />

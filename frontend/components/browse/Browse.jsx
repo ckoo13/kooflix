@@ -1,5 +1,6 @@
 import React from 'react'
 import NavbarContainer from '../navbar/NavBarContainer';
+import SpotlightContainer from './SpotlightContainer';
 
 class Browse extends React.Component {
     constructor(props){
@@ -9,14 +10,14 @@ class Browse extends React.Component {
 
     componentDidMount() {
       this.props.getVideos()
-        .then(() => {document.getElementById('test').src = this.props.video.thumbnailUrl})
+        // .then(() => {document.getElementById('test').src = this.props.video.thumbnailUrl})
     }
 
     render() {
       return (
           <div>
               <NavbarContainer />
-              {/* <img id='test' src='' alt="" /> */}
+              <SpotlightContainer />
           </div>
         )
     }
