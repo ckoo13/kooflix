@@ -17,7 +17,7 @@ class Browse extends React.Component {
 
     render() {
       return (
-          <div>
+          <div className='browse-container'>
               <NavbarContainer />
               <SpotlightContainer />
               {/* this should be the Genres Index */}
