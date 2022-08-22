@@ -1,11 +1,13 @@
 import React from "react";
 import ReactPlayer from "react-player";
+import { withRouter } from "react-router-dom";
 
 class Spotlight extends React.Component {
     constructor(props) {
         super(props);
 
         this._unmute = this._unmute.bind(this);
+        this._handlePlay = this._handlePlay.bind(this);
     };
 
     _unmute() {
@@ -13,6 +15,12 @@ class Spotlight extends React.Component {
         const video = videoDiv.lastElementChild;
         // somehow need to fix this
         video['muted'] = !video['muted'];
+    }
+
+    _handlePlay(e) {
+        e.preventDefault();
+        const videoId = this.props.video.id
+        this.props.history.push(`/browse/${videoId}`)
     }
     
     render() {
@@ -37,7 +45,7 @@ class Spotlight extends React.Component {
                         <img src={window.itaewonClassLogoUrl} alt="" />
                         <p>{this.props.video.description}</p>
                         <div className="spotlight-button-container">
-                            <button id="spotlight-play-button">▶ Play</button>
+                            <button onClick={this._handlePlay} id="spotlight-play-button">▶ Play</button>
                             <button id="spotlight-audio-button"><img id="spotlight-audio-icon" src={window.audioIconUrl} alt="" /></button>
                         </div>
                     </div>
@@ -47,4 +55,4 @@ class Spotlight extends React.Component {
     };
 };
 
-export default Spotlight
+export default withRouter(Spotlight)
