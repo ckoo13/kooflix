@@ -19,7 +19,8 @@ class Browse extends React.Component {
           <div>
               <NavbarContainer />
               <SpotlightContainer />
-              <VideoContainer />
+              {/* this should be the Genres Index */}
+              {/* <VideoContainer /> */}
           </div>
         )
     }
