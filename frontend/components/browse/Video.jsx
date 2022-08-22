@@ -1,4 +1,5 @@
 import React from "react";
+import ReactPlayer from "react-player";
 
 class Video extends React.Component {
     constructor(props){
@@ -7,7 +8,9 @@ class Video extends React.Component {
 
     render() {
         return (
-            <div>This is an individual video</div>
+            <div className="small-video-container">
+                <img className="browse-thumbnail" src={this.props.video.thumbnailUrl} alt="" />
+            </div>
         )
     }
 };

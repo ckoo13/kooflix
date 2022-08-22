@@ -2,6 +2,7 @@ import React from 'react'
 import NavbarContainer from '../navbar/NavBarContainer';
 import SpotlightContainer from './SpotlightContainer';
 import VideoContainer from './VideoContainer';
+import GenresIndexContainer from './GenresIndexContainer'
 
 class Browse extends React.Component {
     constructor(props){
@@ -20,7 +21,7 @@ class Browse extends React.Component {
               <NavbarContainer />
               <SpotlightContainer />
               {/* this should be the Genres Index */}
-              {/* <VideoContainer /> */}
+              <GenresIndexContainer />
           </div>
         )
     }

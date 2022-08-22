@@ -1,4 +1,5 @@
 import React from "react";
+import VideoIndexContainer from './VideoIndexContainer';
 
 class GenresIndex extends React.Component {
     constructor(props){
@@ -6,7 +7,9 @@ class GenresIndex extends React.Component {
     }
 
     render() {
-        
+        return (
+            <VideoIndexContainer genre={'Action'}/>
+        )
     }
 };
 

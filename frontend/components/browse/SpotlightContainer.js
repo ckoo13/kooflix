@@ -5,7 +5,7 @@ import { getVideo } from "../../actions/video_actions";
 
 const mapStateToProps = state => {
     return {
-        video: state.entities.videos[1]
+        video: state.entities.videos[59]
     }
 };
 
