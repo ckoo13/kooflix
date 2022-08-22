@@ -1,6 +1,7 @@
 import React from 'react'
 import NavbarContainer from '../navbar/NavBarContainer';
 import SpotlightContainer from './SpotlightContainer';
+import VideoContainer from './VideoContainer';
 
 class Browse extends React.Component {
     constructor(props){
@@ -18,6 +19,7 @@ class Browse extends React.Component {
           <div>
               <NavbarContainer />
               <SpotlightContainer />
+              <VideoContainer />
           </div>
         )
     }

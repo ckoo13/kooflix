@@ -14,7 +14,6 @@ class NavBar extends React.Component {
     }
 
     componentDidMount() {
-        console.log(window)
         window.addEventListener('scroll', this._changeColor)
     }
 
