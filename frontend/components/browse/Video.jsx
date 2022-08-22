@@ -2,6 +2,8 @@ import React from "react";
 import ReactPlayer from "react-player";
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import AddIcon from '@mui/icons-material/Add';
+import VolumeUpIcon from '@mui/icons-material/VolumeUp';
+import { withRouter } from "react-router-dom";
 
 class Video extends React.Component {
     constructor(props){
@@ -12,7 +14,10 @@ class Video extends React.Component {
         }
 
         this._handleHover = this._handleHover.bind(this);
+        this._handlePlay = this._handlePlay.bind(this);
+        this._unmute = this._unmute.bind(this);
 
+        this.videoRef = React.createRef();
         this.imgRef = React.createRef();
     }
 
@@ -30,24 +35,39 @@ class Video extends React.Component {
         }
     }
 
+    _handlePlay(e) {
+        e.preventDefault();
+        const videoId = this.props.video.id
+        this.props.history.push(`/browse/${videoId}`)
+    }
+
+    _unmute() {
+        const videoDiv = this.videoRef.current;
+        videoDiv['muted'] = !videoDiv['muted'];
+    }
+
     render() {
         return (
             <div className="small-video-container" style={{left: this.state.isHovered && this.props.key * 225 - 50 + this.props.key * 2.5}} onMouseEnter={this._handleHover} onMouseLeave={this._handleHover}>
-                <img className="browse-thumbnail" ref={this.imgRef} src={this.props.video.thumbnailUrl} alt="" />
+                <img className="browse-thumbnail" onClick={this._handlePlay} ref={this.imgRef} src={this.props.video.thumbnailUrl} alt="" />
 
                 {this.state.isHovered && (
                     <>
-                        <ReactPlayer className="small-video-clip"
+                        {/* <ReactPlayer ref={this.videoRef} className="small-video-clip"
                                 url={this.props.video.videoUrl}
                                 width = "100%"
                                 height='140px'
                                 playing={true}
-                                muted={true}
-                                    />
+                                muted={false}
+                                loop={true}
+                                    /> */}
+                        <video className="small-video-clip" onClick={this._handlePlay} ref={this.videoRef} src={this.props.video.videoUrl} autoPlay={true} muted={true} loop></video>
                         <div className="small-video-info">
                             <div className="small-video-icons">
-                                <PlayArrowIcon className="small-video-icon" />
+                                <PlayArrowIcon onClick={this._handlePlay} className="small-video-icon" />
+                                {/* add logic for mylist to this button */}
                                 <AddIcon className="small-video-icon" />
+                                <VolumeUpIcon onClick={this._unmute} className="small-video-icon" />
                             </div>
                             <div className="small-video-info-top">
                                 <p>{this.props.video.runtime}</p>
@@ -65,4 +85,4 @@ class Video extends React.Component {
     }
 };
 
-export default Video
+export default withRouter(Video)

@@ -13,7 +13,6 @@ class Spotlight extends React.Component {
     _unmute() {
         const videoDiv = document.getElementById('spotlight-video')
         const video = videoDiv.lastElementChild;
-        // somehow need to fix this
         video['muted'] = !video['muted'];
     }
 
