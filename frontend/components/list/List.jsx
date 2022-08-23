@@ -1,5 +1,6 @@
 import React from "react";
 import VideoContainer from "../browse/VideoContainer";
+import NavBarContainer from "../navbar/NavBarContainer";
 
 class List extends React.Component {
     constructor(props){
@@ -7,6 +8,7 @@ class List extends React.Component {
 
         this._renderCorrectVideos = this._renderCorrectVideos.bind(this);
     }
+
     // Logic Flow
 
     // need to pull all of the list items in this.props.allListItems with the corresponding profile id
@@ -18,15 +20,18 @@ class List extends React.Component {
 
     _renderCorrectVideos() {
         const listItems = this.props.allListItems;
+
+        const profileListItems = listItems.filter(listItem => listItem.profile_id === this.props.currentProfileId)
+
         const allVideos = this.props.videos;
 
-        for (let i = 0; i < listItems.length; i++) {
-            if (listItems[i].video_id in allVideos) {
+        return (
+            profileListItems.map(listItem => {
                 return (
-                    <VideoContainer video={allVideos[listItems[i].video_id]} />
+                    <VideoContainer video={allVideos[listItem.video_id]} />
                 )
-            }
-        }
+            })
+        )
     }
 
     render(){
@@ -35,6 +40,7 @@ class List extends React.Component {
         console.log(this.props.allListItems)
         return(
             <div>
+                <NavBarContainer />
                 <h1>My List</h1>
                 {this._renderCorrectVideos()}
             </div>

@@ -13,6 +13,7 @@ class Browse extends React.Component {
     componentDidMount() {
       this.props.getVideos()
       this.props.getGenres()
+      this.props.getAllLists()
     }
 
     render() {
