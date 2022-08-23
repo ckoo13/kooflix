@@ -16,6 +16,11 @@ Rails.application.routes.draw do
 
     resources :genres, only: [:index, :show]
 
+    # might have to refactor later or talk about how to solve this problem differently using backend
+    # going to solve this using frontend tricks for now
+
+    resources :lists, only: [:index, :show, :create, :destroy]
+
     resource :session, only: [:create, :destroy]
   end
 end

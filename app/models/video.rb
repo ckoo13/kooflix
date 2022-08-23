@@ -29,6 +29,11 @@ class Video < ApplicationRecord
         through: :video_genres,
         source: :genre
 
+    has_many :lists,
+        class_name: :List,
+        foreign_key: :profile_id,
+        primary_key: :id
+
     has_one_attached :thumbnail
     has_one_attached :video
 end

@@ -23,4 +23,9 @@ class Profile < ApplicationRecord
         primary_key: :id,
         foreign_key: :user_id
 
+    has_many :lists,
+        class_name: :List,
+        foreign_key: :profile_id,
+        primary_key: :id
+
 end
