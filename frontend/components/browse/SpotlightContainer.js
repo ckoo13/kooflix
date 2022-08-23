@@ -3,11 +3,11 @@ import { connect } from "react-redux";
 import Spotlight from "./Spotlight";
 import { getVideo } from "../../actions/video_actions";
 
-const mapStateToProps = state => {
-    return {
-        video: state.entities.videos[1]
-    }
-};
+// const mapStateToProps = state => {
+//     return {
+//         video: state.entities.videos[1]
+//     }
+// };
 
 const mapDispatchToProps = dispatch => {
     return {
@@ -15,5 +15,5 @@ const mapDispatchToProps = dispatch => {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Spotlight)
+export default connect(mapDispatchToProps)(Spotlight)
 

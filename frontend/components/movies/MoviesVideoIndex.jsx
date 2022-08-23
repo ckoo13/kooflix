@@ -1,13 +1,13 @@
 import React from "react";
 import Slider from "react-slick/lib/slider";
-import VideoContainer from "./VideoContainer";
+import VideoContainer from "../browse/VideoContainer";
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import { useRef } from "react";
-import { selectVideoGenres } from "../../reducers/selectors";
+import { selectVideoGenres, selectShowsOrMovies } from "../../reducers/selectors";
 
 
-class VideoIndex extends React.Component  {
+class MovieVideoIndex extends React.Component  {
     constructor(props){
         super(props)
 
@@ -55,8 +55,10 @@ class VideoIndex extends React.Component  {
     }
 
     componentDidMount() {
-        const videoList = selectVideoGenres(this.props.genre, this.props.videos)
-        this.setState({videos: videoList})
+        // change this to movies selector
+        const videoList1 = selectVideoGenres(this.props.genre, this.props.videos)
+        const videoList2 = selectShowsOrMovies('movie', videoList1)
+        this.setState({videos: videoList2})
         this.setState({mounted: true})
     }
 
@@ -89,4 +91,4 @@ class VideoIndex extends React.Component  {
     }
 };
 
-export default VideoIndex;
+export default MovieVideoIndex;

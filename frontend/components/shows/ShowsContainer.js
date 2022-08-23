@@ -1,12 +1,13 @@
 import React from "react";
 import { connect } from "react-redux";
-import Browse from "./Browse";
+import Shows from "./Shows";
 import { getVideos, getVideo } from "../../actions/video_actions";
 import { getGenres } from "../../actions/genre_actions";
 
 const mapStateToProps = state => {
     return {
-        videos: state.entities.videos
+        // Hospital Playlist Id
+        video: state.entities.videos[3]
     }
 };
 
@@ -17,4 +18,4 @@ const mapDispatchToProps = dispatch => {
     }
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Browse)
+export default connect(mapStateToProps, mapDispatchToProps)(Shows)

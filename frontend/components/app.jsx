@@ -11,11 +11,15 @@ import AddProfileContainer from './profile/AddProfileContainer';
 import Splash from './splash/Splash';
 import BrowseContainer from './browse/BrowseContainer';
 import VideoPlayerContainer from './video_player/VideoPlayerContainer';
+import MoviesContainer from './movies/MoviesContainer';
+import ShowsContainer from './shows/ShowsContainer';
 
 const App = () => {
     return (
         <div>
             <Switch>
+                <ProtectedRoute path='/shows' exact component={ShowsContainer} />
+                <ProtectedRoute path='/movies' exact component={MoviesContainer} />
                 <ProtectedRoute path='/browse/:videoid' exact component={VideoPlayerContainer} />
                 <ProtectedRoute path='/browse' component={BrowseContainer} />
                 <AuthRoute path='/login' component={LoginFormContainer} />

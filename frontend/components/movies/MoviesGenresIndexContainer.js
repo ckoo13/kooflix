@@ -1,20 +1,18 @@
-import React from "react";
 import { connect } from "react-redux";
-import Browse from "./Browse";
-import { getVideos, getVideo } from "../../actions/video_actions";
 import { getGenres } from "../../actions/genre_actions";
+import MoviesGenresIndex from './MoviesGenresIndex'
 
 const mapStateToProps = state => {
     return {
+        genres: Object.values(state.entities.genres),
         videos: state.entities.videos
     }
 };
 
 const mapDispatchToProps = dispatch => {
     return {
-        getVideos: () => dispatch(getVideos()),
         getGenres: () => dispatch(getGenres())
     }
-};
+}
 
-export default connect(mapStateToProps, mapDispatchToProps)(Browse)
+export default connect(mapStateToProps, mapDispatchToProps)(MoviesGenresIndex)

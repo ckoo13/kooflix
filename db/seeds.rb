@@ -95,7 +95,7 @@ VideoGenre.create!(video_id: m3.id, genre_id: action.id)
 VideoGenre.create!(video_id: m3.id, genre_id: fantasy.id)
 VideoGenre.create!(video_id: m3.id, genre_id: inspiring.id)
 
-m4 = Video.create!(title: "Spider-Man: Into the Spider-Verse", rating: "PG", runtime: "1h 40m", year: 2018, video_type: "movie", description: "Bitten by a radioactive spider in the subway, Brooklyn teenager Miles Morales suddenly develops mysterious powers that transform him into the one and only Spider-Man. When he meets Peter Parker, he soon realizes that there are many others who share his special, high-flying talents. Miles must now use his newfound skills to battle the evil Kingpin, a hulking madman who can open portals to other universes and pull different versions of Spider-Man into our world.")
+m4 = Video.create!(title: "Spider-Man: Into the Spider-Verse", rating: "PG", runtime: "1h 40m", year: 2018, video_type: "movie", description: "Bitten by a radioactive spider in the subway, Brooklyn teenager Miles Morales suddenly develops mysterious powers that transform him into the one and only Spider-Man. When he meets Peter Parker, he soon realizes that there are many others who share his special, high-flying talents.")
 
 VideoGenre.create!(video_id: m4.id, genre_id: action.id)
 VideoGenre.create!(video_id: m4.id, genre_id: fantasy.id)

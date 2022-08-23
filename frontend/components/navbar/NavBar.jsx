@@ -54,8 +54,8 @@ class NavBar extends React.Component {
                     <div className="navbar-left-links">
                         <Link className="navbar-left-link" to={'/browse'}>Home</Link>
                         {/* fix these routes later */}
-                        <Link className="navbar-left-link" to={'/browse'}>Shows</Link>
-                        <Link className="navbar-left-link" to={'/browse'}>Movies</Link>
+                        <Link className="navbar-left-link" to={'/shows'}>Shows</Link>
+                        <Link className="navbar-left-link" to={'/movies'}>Movies</Link>
                         <Link className="navbar-left-link" to={'/browse'}>My List</Link>
                     </div>
                 </div>

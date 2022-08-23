@@ -6,3 +6,11 @@ export const selectVideoGenres = (genre, videos) => {
 
     return correctVideos;
 };
+
+export const selectShowsOrMovies = (videotype, videos) => {
+    const sorted = Object.values(videos).filter((video) => {
+      return video.video_type === videotype;
+    });
+  
+    return sorted;
+};
