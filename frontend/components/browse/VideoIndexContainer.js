@@ -4,11 +4,11 @@ import VideoIndex from "./VideoIndex";
 
 
 // for now just see if we can render all videos
-const mapStateToProps = state => {
-    return {
-        videos: Object.values(state.entities.videos)
-    }
-};
+// const mapStateToProps = state => {
+//     return {
+//         videos: Object.values(state.entities.videos)
+//     }
+// };
 
 const mapDispatchToProps = dispatch => {
     return {
@@ -16,4 +16,4 @@ const mapDispatchToProps = dispatch => {
     }
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(VideoIndex);
+export default connect(mapDispatchToProps)(VideoIndex);

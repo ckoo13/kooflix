@@ -12,7 +12,7 @@ class Browse extends React.Component {
 
     componentDidMount() {
       this.props.getVideos()
-        // .then(() => {document.getElementById('test').src = this.props.video.thumbnailUrl})
+      this.props.getGenres()
     }
 
     render() {

@@ -204,10 +204,10 @@ m2.video.attach(io: m2video, filename: 'thedarkknightrises.mp4')
 
 #Batman Begins
 m3thumbnail = open('https://kooflix-seeds.s3.us-west-1.amazonaws.com/thumbnails/batmanbegins.jpeg')
-m3.thumbnail.attach(io: m2thumbnail, filename: 'batmanbegins.jpeg')
+m3.thumbnail.attach(io: m3thumbnail, filename: 'batmanbegins.jpeg')
 
 m3video = open('https://kooflix-seeds.s3.us-west-1.amazonaws.com/Movies/batmanbegins.mp4')
-m3.video.attach(io: m2video, filename: 'batmanbegins.mp4')
+m3.video.attach(io: m3video, filename: 'batmanbegins.mp4')
 
 #Spider-Man: Into the Spider-Verse
 m4thumbnail = open('https://kooflix-seeds.s3.us-west-1.amazonaws.com/thumbnails/spiderman.webp')

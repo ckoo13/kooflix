@@ -8,7 +8,13 @@ class GenresIndex extends React.Component {
 
     render() {
         return (
-            <VideoIndexContainer genre={'Action'}/>
+            <div>
+                {this.props.genres.map(genre => {
+                    return (
+                        <VideoIndexContainer videos={this.props.videos} genre={genre} key={genre.id}/>
+                    )
+                })}
+            </div>
         )
     }
 };

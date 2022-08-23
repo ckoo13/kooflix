@@ -47,41 +47,45 @@ class Video extends React.Component {
     }
 
     render() {
-        return (
-            <div className="small-video-container" style={{left: this.state.isHovered && this.props.key * 225 - 50 + this.props.key * 2.5}} onMouseEnter={this._handleHover} onMouseLeave={this._handleHover}>
-                <img className="browse-thumbnail" onClick={this._handlePlay} ref={this.imgRef} src={this.props.video.thumbnailUrl} alt="" />
-
-                {this.state.isHovered && (
-                    <>
-                        {/* <ReactPlayer ref={this.videoRef} className="small-video-clip"
-                                url={this.props.video.videoUrl}
-                                width = "100%"
-                                height='140px'
-                                playing={true}
-                                muted={false}
-                                loop={true}
-                                    /> */}
-                        <video className="small-video-clip" onClick={this._handlePlay} ref={this.videoRef} src={this.props.video.videoUrl} autoPlay={true} muted={true} loop></video>
-                        <div className="small-video-info">
-                            <div className="small-video-icons">
-                                <PlayArrowIcon onClick={this._handlePlay} className="small-video-icon" />
-                                {/* add logic for mylist to this button */}
-                                <AddIcon className="small-video-icon" />
-                                <VolumeUpIcon onClick={this._unmute} className="small-video-icon" />
+        if (!this.props.video) {
+            return null
+        } else {
+            return (
+                <div className="small-video-container" style={{left: this.state.isHovered && this.props.key * 225 - 50 + this.props.key * 2.5}} onMouseEnter={this._handleHover} onMouseLeave={this._handleHover}>
+                    <img className="browse-thumbnail" onClick={this._handlePlay} ref={this.imgRef} src={this.props.video.thumbnailUrl} alt="" />
+    
+                    {this.state.isHovered && (
+                        <>
+                            {/* <ReactPlayer ref={this.videoRef} className="small-video-clip"
+                                    url={this.props.video.videoUrl}
+                                    width = "100%"
+                                    height='140px'
+                                    playing={true}
+                                    muted={false}
+                                    loop={true}
+                                        /> */}
+                            <video className="small-video-clip" onClick={this._handlePlay} ref={this.videoRef} src={this.props.video.videoUrl} autoPlay={true} muted={true} loop></video>
+                            <div className="small-video-info">
+                                <div className="small-video-icons">
+                                    <PlayArrowIcon onClick={this._handlePlay} className="small-video-icon" />
+                                    {/* add logic for mylist to this button */}
+                                    <AddIcon className="small-video-icon" />
+                                    <VolumeUpIcon onClick={this._unmute} className="small-video-icon" />
+                                </div>
+                                <div className="small-video-info-top">
+                                    <p>{this.props.video.runtime}</p>
+                                    <p className="small-video-rating">{this.props.video.rating}</p>
+                                    <p>{this.props.video.year}</p>
+                                </div>
+                                <div className="small-video-info-description">
+                                    <p>{this.props.video.description}</p>
+                                </div>
                             </div>
-                            <div className="small-video-info-top">
-                                <p>{this.props.video.runtime}</p>
-                                <p className="small-video-rating">{this.props.video.rating}</p>
-                                <p>{this.props.video.year}</p>
-                            </div>
-                            <div className="small-video-info-description">
-                                <p>{this.props.video.description}</p>
-                            </div>
-                        </div>
-                    </>
-                )}
-            </div>
-        )
+                        </>
+                    )}
+                </div>
+            )
+        }
     }
 };
 

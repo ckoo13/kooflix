@@ -4,7 +4,8 @@ import GenresIndex from "./GenresIndex";
 
 const mapStateToProps = state => {
     return {
-        genres: state.entities.genres
+        genres: Object.values(state.entities.genres),
+        videos: state.entities.videos
     }
 };
 

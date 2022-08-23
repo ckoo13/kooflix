@@ -15,7 +15,7 @@
 #  index_video_genres_on_video_id               (video_id)
 #
 class VideoGenre < ApplicationRecord
-    validates :user_id, :genre_id, presence: true
+    validates :video_id, :genre_id, presence: true
 
     belongs_to :video,
         class_name: :Video,

@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import Browse from "./Browse";
 import { getVideos, getVideo } from "../../actions/video_actions";
+import { getGenres } from "../../actions/genre_actions";
 
 const mapStateToProps = state => {
     return {
@@ -11,7 +12,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        getVideos: () => dispatch(getVideos())
+        getVideos: () => dispatch(getVideos()),
+        getGenres: () => dispatch(getGenres())
     }
 };
 
