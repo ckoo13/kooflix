@@ -13,4 +13,13 @@
 #
 class Genre < ApplicationRecord
     validates :name, presence: true
+
+    has_many :video_genres,
+        class_name: :VideoGenre,
+        foreign_key: :genre_id,
+        primary_key: :id
+
+    has_many :videos,
+        through: :video_genres,
+        source: :video
 end

@@ -20,6 +20,15 @@ class Video < ApplicationRecord
     #Validations
     validates :description, :rating, :runtime, :title, :video_type, presence: true
 
+    has_many :video_genres,
+        class_name: :VideoGenre,
+        foreign_key: :video_id,
+        primary_key: :id
+
+    has_many :genres,
+        through: :video_genres,
+        source: :genre
+
     has_one_attached :thumbnail
     has_one_attached :video
 end
