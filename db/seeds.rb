@@ -18,10 +18,14 @@ ActiveRecord::Base.connection.reset_pk_sequence!("users")
 ActiveRecord::Base.connection.reset_pk_sequence!("genres")
 ActiveRecord::Base.connection.reset_pk_sequence!("video_genres")
 ActiveRecord::Base.connection.reset_pk_sequence!("videos")
+ActiveRecord::Base.connection.reset_pk_sequence!("profiles")
+
+#Creating Demo User
+demo = User.create!(email: 'demouser@gmail.com', password: 1234567)
 
 #Genres
 action = Genre.create!(name: "Action")
-kdrama = Genre.create!(name: "K-dramas")
+korean = Genre.create!(name: "Korean")
 comedy = Genre.create!(name: "Comedies")
 fantasy = Genre.create!(name: "Fantasies")
 friendship = Genre.create!(name: "Friendship")
@@ -30,7 +34,7 @@ inspiring = Genre.create!(name: 'Inspiring')
 # Shows
 s1 = Video.create!(title: "Itaewon Class", description: "An ex-con and his friends fight to make their ambitious dreams for their street bar a reality.", rating: "TV-MA", runtime: "16 Episodes", year: 2020, video_type: "show")
 
-VideoGenre.create!(video_id: s1.id, genre_id: kdrama.id)
+VideoGenre.create!(video_id: s1.id, genre_id: korean.id)
 VideoGenre.create!(video_id: s1.id, genre_id: inspiring.id)
 VideoGenre.create!(video_id: s1.id, genre_id: friendship.id)
 
@@ -43,7 +47,7 @@ VideoGenre.create!(video_id: s2.id, genre_id: friendship.id)
 
 s3 = Video.create!(title: "Hospital Playlist", description: "Friends since undergrad school, five doctors remain close and share a love for music while working at the same hospital.", rating: "TV-14", runtime: "2 Seasons", year: 2021, video_type: "show")
 
-VideoGenre.create!(video_id: s3.id, genre_id: kdrama.id)
+VideoGenre.create!(video_id: s3.id, genre_id: korean.id)
 VideoGenre.create!(video_id: s3.id, genre_id: comedy.id)
 VideoGenre.create!(video_id: s3.id, genre_id: friendship.id)
 VideoGenre.create!(video_id: s3.id, genre_id: inspiring.id)
@@ -51,20 +55,20 @@ VideoGenre.create!(video_id: s3.id, genre_id: inspiring.id)
 
 s4 = Video.create!(title: "Crash Landing on You", description: "A paragliding mishap drops a South Korean heiress in North Korea - and into the life of an army officer, who decides he will help her hide.", rating: "TV-14", runtime: "16 Episodes", year: 2019, video_type: "show")
 
-VideoGenre.create!(video_id: s4.id, genre_id: kdrama.id)
+VideoGenre.create!(video_id: s4.id, genre_id: korean.id)
 VideoGenre.create!(video_id: s4.id, genre_id: comedy.id)
 VideoGenre.create!(video_id: s4.id, genre_id: inspiring.id)
 
 s5 = Video.create!(title: "Squid Game", description: "Hundreds of cash-strapped contestants accept an invitation to compete in children's games for a tempting prize, but the stakes are deadly.", rating: "TV-MA", runtime: "16 Episodes", year: 2021, video_type: "show")
 
-VideoGenre.create!(video_id: s5.id, genre_id: kdrama.id)
+VideoGenre.create!(video_id: s5.id, genre_id: korean.id)
 VideoGenre.create!(video_id: s5.id, genre_id: action.id)
 VideoGenre.create!(video_id: s5.id, genre_id: fantasy.id)
 
 s6 = Video.create!(title: "My Name", description: "Following her father's murder, a revenge-driven woman puts her trust in a powerful crime boss -- and enters the force under his direction.", rating: "TV-MA", runtime: "8 Episodes", year: 2021, video_type: "show")
 
 VideoGenre.create!(video_id: s6.id, genre_id: action.id)
-VideoGenre.create!(video_id: s6.id, genre_id: kdrama.id)
+VideoGenre.create!(video_id: s6.id, genre_id: korean.id)
 VideoGenre.create!(video_id: s6.id, genre_id: inspiring.id)
 
 s7 = Video.create!(title: "The Last Dance", description: "In the fall of 1997, Michael Jordan and the Chicago Bulls allowed a film crew to follow them as they went for their sixth NBA title in eight seasons. That resulted in a stunning portrait of one of the sport's most iconic athletes and a celebrated team. 'The Last Dance' follows the Bulls' 1997-98 season from start to finish, while also covering the rest of the chapters in Jordan's remarkable career.", rating: "TV-MA", runtime: "10 Episodes", year: 2020, video_type: "show")
@@ -127,6 +131,94 @@ m9 = Video.create!(title: "Dragon Ball Super: Broly", rating: "PG", runtime: "1h
 VideoGenre.create!(video_id: m9.id, genre_id: action.id)
 VideoGenre.create!(video_id: m9.id, genre_id: fantasy.id)
 
+#Adding Additional Shows
+
+#When the Camellia Blooms
+s9 = Video.create!(title: "When the Camellia Blooms", rating: "TV-MA", runtime: "20 Episodes", year: 2019, video_type: "show", description: "Dongbaek, an orphan who grew up to become a single mom, meets and falls in love with Yongsik, a do-gooder police officer in their small town.")
+
+VideoGenre.create!(video_id: s9.id, genre_id: korean.id)
+VideoGenre.create!(video_id: s9.id, genre_id: comedy.id)
+VideoGenre.create!(video_id: s9.id, genre_id: friendship.id)
+
+#Black Mirror
+s10 = Video.create!(title: "Black Mirror", rating: "TV-MA", runtime: "5 Seasons", year: 2011, video_type: "show", description: "A series of stand-alone dramas -- sharp, suspenseful, satirical tales that explore techno-paranoia -- 'Black Mirror' is a contemporary reworking of 'The Twilight Zone' with stories that tap into the collective unease about the modern world, particularly regarding both intended and unintended consequences of new technologies and the effect they have on society and individuals.")
+
+VideoGenre.create!(video_id: s10.id, genre_id: fantasy.id)
+VideoGenre.create!(video_id: s10.id, genre_id: action.id)
+
+#Death Note
+s11 = Video.create!(title: "Death Note", rating: "TV-MA", runtime: "37 Episodes", year: 2003, video_type: "show", description: "Death Note is a Japanese manga series written by Tsugumi Ohba and illustrated by Takeshi Obata. The story follows Light Yagami, a teen genius who discovers a mysterious notebook: the 'Death Note', which belonged to the shinigami Ryuk, and grants the user the supernatural ability to kill anyone whose name is written in its pages.")
+
+VideoGenre.create!(video_id: s11.id, genre_id: fantasy.id)
+VideoGenre.create!(video_id: s11.id, genre_id: action.id)
+
+#Naruto
+s12 = Video.create!(title: "Naruto", rating: "TV-14", runtime: "5 Seasons", year: 2002, video_type: "show", description: "Adapted from a comic by Masashi Kishimoto, this animated hit follows the adventures of Naruto Uzumaki, a boy who is determined to become a Hokage, the ninja in his village who is acknowledged as the leader and the strongest of them all.")
+
+VideoGenre.create!(video_id: s12.id, genre_id: friendship.id)
+VideoGenre.create!(video_id: s12.id, genre_id: action.id)
+VideoGenre.create!(video_id: s12.id, genre_id: comedy.id)
+
+#The Witcher
+s13 = Video.create!(title: "The Witcher", rating: "TV-MA", runtime: "2 Seasons", year: 2019, video_type: "show", description: "The witcher Geralt, a mutated monster hunter, struggles to find his place in a world in which people often prove more wicked than beasts.")
+
+VideoGenre.create!(video_id: s13.id, genre_id: action.id)
+VideoGenre.create!(video_id: s13.id, genre_id: fantasy.id)
+
+#Avatar
+s14 = Video.create!(title: "Avatar: The Last Airbender", rating: "TV-MA", runtime: "3 Seasons", year: 2005, video_type: "show", description: "The world is divided into four nations -- the Water Tribe, the Earth Kingdom, the Fire Nation and the Air Nomads -- each represented by a natural element for which the nation is named. Benders have the ability to control and manipulate the element from their nation.")
+
+VideoGenre.create!(video_id: s14.id, genre_id: friendship.id)
+VideoGenre.create!(video_id: s14.id, genre_id: fantasy.id)
+VideoGenre.create!(video_id: s14.id, genre_id: action.id)
+
+#Additional Movies
+
+#Veteran
+m10 = Video.create!(title: "Veteran", rating: "R", runtime: "2h 4m", year: 2015, video_type: "movie", description: "A detective tracks down a successful young criminal. The young heir is running his own crime syndicate under a corrupt corporation.")
+
+VideoGenre.create!(video_id: m10.id, genre_id: action.id)
+VideoGenre.create!(video_id: m10.id, genre_id: korean.id)
+VideoGenre.create!(video_id: m10.id, genre_id: inspiring.id)
+VideoGenre.create!(video_id: m10.id, genre_id: comedy.id)
+
+#Space Sweepers
+m11 = Video.create!(title: "Space Sweepers", rating: "R", runtime: "2h 16m", year: 2021, video_type: "movie", description: "After snatching a crashed space shuttle in the latest debris chase, Spaceship Victory's crew members find a 7-year-old girl inside. They realise that she's the humanlike robot wanted by UTS Space Guards, and decide to demand a ransom in exchange.")
+
+VideoGenre.create!(video_id: m11.id, genre_id: action.id)
+VideoGenre.create!(video_id: m11.id, genre_id: korean.id)
+VideoGenre.create!(video_id: m11.id, genre_id: fantasy.id)
+
+#Okja
+m12 = Video.create!(title: "Okja", rating: "PG-13", runtime: "2h 0m", year: 2017, video_type: "movie", description: "For 10 idyllic years, young Mija has been caretaker and constant companion to Okja - a massive animal and an even bigger friend - at her home in the mountains of South Korea. But that changes when family-owned, multinational conglomerate Mirando Corporation takes Okja for themselves and transports her to New York.")
+
+VideoGenre.create!(video_id: m12.id, genre_id: korean.id)
+VideoGenre.create!(video_id: m12.id, genre_id: fantasy.id)
+
+
+#The Bros
+m13 = Video.create!(title: "The Bros", rating: "PG-13", runtime: "1h 42m", year: 2017, video_type: "movie", description: "Reunited in their hometown for their father's funeral, two brothers meet a peculiar woman who shares secrets about their family.")
+
+VideoGenre.create!(video_id: m13.id, genre_id: comedy.id)
+VideoGenre.create!(video_id: m13.id, genre_id: korean.id)
+VideoGenre.create!(video_id: m13.id, genre_id: inspiring.id)
+VideoGenre.create!(video_id: m13.id, genre_id: friendship.id)
+
+#Time to Hunt
+m14 = Video.create!(title: "Time to Hunt", rating: "PG-13", runtime: "2h 14m", year: 2020, video_type: "movie", description: "While planning a heist to escape a dystopian world, a group of young people attracts the attention of a vicious killer.")
+
+VideoGenre.create!(video_id: m14.id, genre_id: action.id)
+VideoGenre.create!(video_id: m14.id, genre_id: korean.id)
+VideoGenre.create!(video_id: m14.id, genre_id: fantasy.id)
+
+#Blackpink
+m15 = Video.create!(title: "Blackpink: Light Up The Sky", rating: "PG", runtime: "1h 19m", year: 2020, video_type: "movie", description: "Interviews combined with footage of Blackpink members Jisoo, Jennie, Rosé and Lisa, from their early days to their historic 2019 Coachella performance, where Blackpink was the first K-pop girl group to take on the Coachella stage.")
+
+VideoGenre.create!(video_id: m15.id, genre_id: friendship.id)
+VideoGenre.create!(video_id: m15.id, genre_id: comedy.id)
+VideoGenre.create!(video_id: m15.id, genre_id: korean.id)
+
+
 #Attaching Thumbnails and Videos for Shows
 
 #Itaewon Class
@@ -184,6 +276,53 @@ s8.thumbnail.attach(io: s8thumbnail, filename: 'topboy.jpg')
 
 s8video = open('https://kooflix-seeds.s3.us-west-1.amazonaws.com/Shows/topboy.mp4')
 s8.video.attach(io: s8video, filename: 'topboy.mp4')
+
+#When the Camellia Blooms
+
+s9thumbnail = open('https://kooflix-seeds.s3.us-west-1.amazonaws.com/wtcb.jpeg')
+s9.thumbnail.attach(io: s9thumbnail, filename: 'wtcb.jpeg')
+
+s9video = open('https://kooflix-seeds.s3.us-west-1.amazonaws.com/Shows/wtcb.mp4')
+s9.video.attach(io: s9video, filename: 'wtcb.mp4')
+
+#Black Mirror
+
+s10thumbnail = open('https://kooflix-seeds.s3.us-west-1.amazonaws.com/thumbnails/newthumbnails/Shows/blackmirror.jpeg')
+s10.thumbnail.attach(io: s10thumbnail, filename: 'blackmirror.jpeg')
+
+s10video = open('https://kooflix-seeds.s3.us-west-1.amazonaws.com/Shows/shows/Black+Mirror%3A+Rachel%2C+Jack+and+Ashley+Too+%7C+Official+Trailer+%7C+Netflix.mp4')
+s10.video.attach(io: s10video, filename: 'Black+Mirror%3A+Rachel%2C+Jack+and+Ashley+Too+%7C+Official+Trailer+%7C+Netflix.mp4')
+
+#Death Note
+
+s11thumbnail = open('https://kooflix-seeds.s3.us-west-1.amazonaws.com/thumbnails/newthumbnails/Shows/deathnnote.jpeg')
+s11.thumbnail.attach(io: s11thumbnail, filename: 'deathnote.jpeg')
+
+s11video = open('https://kooflix-seeds.s3.us-west-1.amazonaws.com/Shows/shows/Death+Note+%7C+OFFICIAL+TRAILER.mp4')
+s11.video.attach(io: s11video, filename: 'Death+Note+%7C+OFFICIAL+TRAILER.mp4')
+
+#Naruto
+
+s12thumbnail = open('https://kooflix-seeds.s3.us-west-1.amazonaws.com/thumbnails/newthumbnails/Shows/naruto.jpeg')
+s12.thumbnail.attach(io: s12thumbnail, filename: 'naruto.jpeg')
+
+s12video = open('https://kooflix-seeds.s3.us-west-1.amazonaws.com/Shows/shows/naruto.mp4')
+s12.video.attach(io: s12video, filename: 'naruto.mp4')
+
+#The Witcher
+
+s13thumbnail = open('https://kooflix-seeds.s3.us-west-1.amazonaws.com/thumbnails/newthumbnails/Shows/thewitcher.jpg')
+s13.thumbnail.attach(io: s13thumbnail, filename: 'thewitcher.jpg')
+
+s13video = open('https://kooflix-seeds.s3.us-west-1.amazonaws.com/Shows/shows/THE+WITCHER+%7C+MAIN+TRAILER+%7C+NETFLIX.mp4')
+s13.video.attach(io: s13video, filename: 'THE+WITCHER+%7C+MAIN+TRAILER+%7C+NETFLIX.mp4')
+
+#Avatar
+s14thumbnail = open('https://kooflix-seeds.s3.us-west-1.amazonaws.com/thumbnails/newthumbnails/Shows/avatar.jpeg')
+s14.thumbnail.attach(io: s14thumbnail, filename: 'avatar.jpeg')
+
+s14video = open('https://kooflix-seeds.s3.us-west-1.amazonaws.com/Shows/shows/Avatar+The+Last+Airbender+Extended+Intro.mp4')
+s14.video.attach(io: s14video, filename: 'Avatar+The+Last+Airbender+Extended+Intro.mp4')
 
 
 #Attaching Thumbnails and Videos for Movies
@@ -256,4 +395,54 @@ m9video = open('https://kooflix-seeds.s3.us-west-1.amazonaws.com/Movies/dbz.mp4'
 m9.video.attach(io: m9video, filename: 'dbz.mp4')
 
 
+#Veteran
+
+m10thumbnail = open('https://kooflix-seeds.s3.us-west-1.amazonaws.com/thumbnails/newthumbnails/Movies/veteran.jpeg')
+m10.thumbnail.attach(io: m10thumbnail, filename: 'veteran.jpeg')
+
+m10video = open('https://kooflix-seeds.s3.us-west-1.amazonaws.com/Movies/movies/VETERAN+Trailer+%7C+Festival+2015.mp4')
+m10.video.attach(io: m10video, filename: 'VETERAN+Trailer+%7C+Festival+2015.mp4')
+
+#Space Sweepers
+
+m11thumbnail = open('https://kooflix-seeds.s3.us-west-1.amazonaws.com/thumbnails/newthumbnails/Movies/spacesweepers.jpeg')
+m11.thumbnail.attach(io: m11thumbnail, filename: 'spacesweepers.jpeg')
+
+m11video = open('https://kooflix-seeds.s3.us-west-1.amazonaws.com/Movies/movies/Space+Sweepers+%7C+Official+Teaser+%7C+Netflix.mp4')
+m11.video.attach(io: m11video, filename: 'Space+Sweepers+%7C+Official+Teaser+%7C+Netflix.mp4')
+
+
+#Okja
+
+m12thumbnail = open('https://kooflix-seeds.s3.us-west-1.amazonaws.com/thumbnails/thedarkknight.jpeg')
+m12.thumbnail.attach(io: m12thumbnail, filename: 'thedarkknight.jpeg')
+
+m12video = open('https://kooflix-seeds.s3.us-west-1.amazonaws.com/Movies/TheDarkKnight.mp4')
+m12.video.attach(io: m12video, filename: 'TheDarkKnight.mp4')
+
+#The Bros
+
+m13thumbnail = open('https://kooflix-seeds.s3.us-west-1.amazonaws.com/thumbnails/newthumbnails/Movies/okja.jpeg')
+m13.thumbnail.attach(io: m13thumbnail, filename: 'okja.jpeg')
+
+m13video = open('https://kooflix-seeds.s3.us-west-1.amazonaws.com/Movies/movies/okja.mp4')
+m13.video.attach(io: m13video, filename: 'okja.mp4')
+
+
+#Time to Hunt
+
+m14thumbnail = open('https://kooflix-seeds.s3.us-west-1.amazonaws.com/thumbnails/newthumbnails/Movies/timetohunt.jpeg')
+m14.thumbnail.attach(io: m14thumbnail, filename: 'timetohunt.jpeg')
+
+m14video = open('https://kooflix-seeds.s3.us-west-1.amazonaws.com/Movies/movies/Time+To+Hunt+%7C+Official+Teaser+%7C+Netflix.mp4')
+m14.video.attach(io: m14video, filename: 'Time+To+Hunt+%7C+Official+Teaser+%7C+Netflix.mp4')
+
+
+#BlackPink
+
+m15thumbnail = open('https://kooflix-seeds.s3.us-west-1.amazonaws.com/thumbnails/newthumbnails/Movies/blackpink.jpeg')
+m15.thumbnail.attach(io: m15thumbnail, filename: 'blackpink.jpeg')
+
+m15video = open('https://kooflix-seeds.s3.us-west-1.amazonaws.com/Movies/movies/BLACKPINK%3A+LIGHT+UP+THE+SKY+%7C+Official+Trailer+%7C+Netflix.mp4')
+m15.video.attach(io: m15video, filename: 'BLACKPINK%3A+LIGHT+UP+THE+SKY+%7C+Official+Trailer+%7C+Netflix.mp4')
 
