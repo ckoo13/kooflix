@@ -13,11 +13,13 @@ import BrowseContainer from './browse/BrowseContainer';
 import VideoPlayerContainer from './video_player/VideoPlayerContainer';
 import MoviesContainer from './movies/MoviesContainer';
 import ShowsContainer from './shows/ShowsContainer';
+import ListContainer from './list/ListContainer';
 
 const App = () => {
     return (
         <div>
             <Switch>
+                <ProtectedRoute path='/myList' exact component={ListContainer} />
                 <ProtectedRoute path='/shows' exact component={ShowsContainer} />
                 <ProtectedRoute path='/movies' exact component={MoviesContainer} />
                 <ProtectedRoute path='/browse/:videoid' exact component={VideoPlayerContainer} />
