@@ -51,7 +51,7 @@ class Spotlight extends React.Component {
                 // instead of autoplaying use event listeners to set manually play so we don't run into mute issue
                 <div onClick={this._unmute} className="spotlight-container">
                     <ReactPlayer url={this.props.video.videoUrl} 
-                        playing={false}
+                        playing={true}
                         width='150%'
                         height='150%'
                         muted={true}
