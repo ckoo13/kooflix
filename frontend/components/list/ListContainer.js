@@ -5,7 +5,8 @@ import List from "./List";
 const mapStateToProps = state => {
     return {
         currentProfileId: state.session.currentProfile,
-        allListItems: Object.values(state.entities.lists)
+        allListItems: Object.values(state.entities.lists),
+        videos: state.entities.videos
     }
 };
 

@@ -16,6 +16,7 @@ class Video extends React.Component {
         this._handleHover = this._handleHover.bind(this);
         this._handlePlay = this._handlePlay.bind(this);
         this._unmute = this._unmute.bind(this);
+        this._addToMyList = this._addToMyList.bind(this);
 
         this.videoRef = React.createRef();
         this.imgRef = React.createRef();
@@ -46,6 +47,17 @@ class Video extends React.Component {
         videoDiv['muted'] = !videoDiv['muted'];
     }
 
+    // creating listItem
+    _addToMyList(e) {
+        e.preventDefault();
+
+        const newListItem = {video_id: this.props.video.id, profile_id: this.props.currentProfileId}
+        this.props.makeListItem(newListItem)
+    }
+
+    // need to add logic for removing a listItem and how the button will react
+    
+
     render() {
         if (!this.props.video) {
             return null
@@ -69,7 +81,7 @@ class Video extends React.Component {
                                 <div className="small-video-icons">
                                     <PlayArrowIcon onClick={this._handlePlay} className="small-video-icon" />
                                     {/* add logic for mylist to this button */}
-                                    <AddIcon className="small-video-icon" />
+                                    <AddIcon onClick={this._addToMyList} className="small-video-icon" />
                                     <VolumeUpIcon onClick={this._unmute} className="small-video-icon" />
                                 </div>
                                 <div className="small-video-info-top">

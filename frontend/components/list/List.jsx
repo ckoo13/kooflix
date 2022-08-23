@@ -1,15 +1,42 @@
 import React from "react";
+import VideoContainer from "../browse/VideoContainer";
 
 class List extends React.Component {
     constructor(props){
         super(props)
+
+        this._renderCorrectVideos = this._renderCorrectVideos.bind(this);
+    }
+    // Logic Flow
+
+    // need to pull all of the list items in this.props.allListItems with the corresponding profile id
+        // once we do that we have the videos that we need to render on the page
+    // we then loop through those listItems and pull the corresponding videos from all videos inside this.props.videos
+        // for each of those videos we render a VideoContainer component
+
+    // We need to consider removing listItems and page re-render
+
+    _renderCorrectVideos() {
+        const listItems = this.props.allListItems;
+        const allVideos = this.props.videos;
+
+        for (let i = 0; i < listItems.length; i++) {
+            if (listItems[i].video_id in allVideos) {
+                return (
+                    <VideoContainer video={allVideos[listItems[i].video_id]} />
+                )
+            }
+        }
     }
 
     render(){
+        // include navbar in here too
         console.log(this.props.currentProfileId)
         console.log(this.props.allListItems)
         return(
-            <div>List Page is Working
+            <div>
+                <h1>My List</h1>
+                {this._renderCorrectVideos()}
             </div>
         )
     }

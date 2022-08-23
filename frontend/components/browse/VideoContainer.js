@@ -1,17 +1,20 @@
 import { connect } from "react-redux";
 import { getVideo } from "../../actions/video_actions";
+import { makeListItem, removeListItem } from '../../actions/list_actions';
 import Video from "./Video";
 
-// const mapStateToProps = (state, ownProps) => {
-//     return {
-//         video: state.entities.videos[1]
-//     }
-// };
-
-const mapDispatchToProps = dispatch => {
+const mapStateToProps = (state, ownProps) => {
     return {
-        getVideo: videoId => dispatch(getVideo(videoId))
+        currentProfileId: state.session.currentProfile
     }
 };
 
-export default connect(mapDispatchToProps)(Video)
+const mapDispatchToProps = dispatch => {
+    return {
+        getVideo: videoId => dispatch(getVideo(videoId)),
+        makeListItem: list => dispatch(makeListItem(list)),
+        removeListItem: listId => dispatch(removeListItem(listId))
+    }
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Video)
