@@ -6,7 +6,8 @@ import { getGenres } from "../../actions/genre_actions";
 
 const mapStateToProps = state => {
     return {
-        videos: state.entities.videos
+        videos: state.entities.videos,
+        genres: state.entities.genres
     }
 };
 

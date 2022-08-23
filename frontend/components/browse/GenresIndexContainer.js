@@ -2,9 +2,9 @@ import { connect } from "react-redux";
 import { getGenres } from "../../actions/genre_actions";
 import GenresIndex from "./GenresIndex";
 
-const mapStateToProps = state => {
+const mapStateToProps = (state, ownProps) => {
     return {
-        genres: Object.values(state.entities.genres),
+        genres: Object.values(ownProps.genres),
         videos: state.entities.videos
     }
 };
