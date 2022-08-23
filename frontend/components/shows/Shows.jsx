@@ -1,7 +1,7 @@
 import React from 'react'
 import NavBarContainer from '../navbar/NavBarContainer';
 import SpotlightContainer from '../browse/SpotlightContainer';
-import GenresIndexContainer from '../browse/GenresIndexContainer';
+import ShowsGenresIndexContainer from './ShowsGenresIndexContainer';
 
 class Shows extends React.Component {
     constructor(props){
@@ -20,7 +20,7 @@ class Shows extends React.Component {
               <NavBarContainer />
               <SpotlightContainer video={this.props.video} />
               {/* this should be the Genres Index */}
-              <GenresIndexContainer />
+              <ShowsGenresIndexContainer />
           </div>
         )
     }
