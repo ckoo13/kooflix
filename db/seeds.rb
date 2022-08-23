@@ -37,12 +37,14 @@ s1 = Video.create!(title: "Itaewon Class", description: "An ex-con and his frien
 VideoGenre.create!(video_id: s1.id, genre_id: korean.id)
 VideoGenre.create!(video_id: s1.id, genre_id: inspiring.id)
 VideoGenre.create!(video_id: s1.id, genre_id: friendship.id)
+VideoGenre.create!(video_id: s1.id, genre_id: comedy.id)
 
 
 s2 = Video.create!(title: "New Girl", description: "After going through a rough breakup, awkward and upbeat Jess (Zooey Deschanel) moves in with three single guys. Intelligent and witty Nick is an underachiever who took the bartender off-ramp on his road to success. Together with Jess' best friend, Cece, they bond to form an unlikely, and dysfunctional, family.", rating: "TV-14", runtime: "7 Seasons", year: 2011, video_type: "show")
 
 VideoGenre.create!(video_id: s2.id, genre_id: comedy.id)
 VideoGenre.create!(video_id: s2.id, genre_id: friendship.id)
+VideoGenre.create!(video_id: s2.id, genre_id: inspiring.id)
 
 
 s3 = Video.create!(title: "Hospital Playlist", description: "Friends since undergrad school, five doctors remain close and share a love for music while working at the same hospital.", rating: "TV-14", runtime: "2 Seasons", year: 2021, video_type: "show")
@@ -139,6 +141,7 @@ s9 = Video.create!(title: "When the Camellia Blooms", rating: "TV-MA", runtime: 
 VideoGenre.create!(video_id: s9.id, genre_id: korean.id)
 VideoGenre.create!(video_id: s9.id, genre_id: comedy.id)
 VideoGenre.create!(video_id: s9.id, genre_id: friendship.id)
+VideoGenre.create!(video_id: s9.id, genre_id: inspiring.id)
 
 #Black Mirror
 s10 = Video.create!(title: "Black Mirror", rating: "TV-MA", runtime: "5 Seasons", year: 2011, video_type: "show", description: "A series of stand-alone dramas -- sharp, suspenseful, satirical tales that explore techno-paranoia -- 'Black Mirror' is a contemporary reworking of 'The Twilight Zone' with stories that tap into the collective unease about the modern world, particularly regarding both intended and unintended consequences of new technologies and the effect they have on society and individuals.")
@@ -158,6 +161,7 @@ s12 = Video.create!(title: "Naruto", rating: "TV-14", runtime: "5 Seasons", year
 VideoGenre.create!(video_id: s12.id, genre_id: friendship.id)
 VideoGenre.create!(video_id: s12.id, genre_id: action.id)
 VideoGenre.create!(video_id: s12.id, genre_id: comedy.id)
+VideoGenre.create!(video_id: s12.id, genre_id: fantasy.id)
 
 #The Witcher
 s13 = Video.create!(title: "The Witcher", rating: "TV-MA", runtime: "2 Seasons", year: 2019, video_type: "show", description: "The witcher Geralt, a mutated monster hunter, struggles to find his place in a world in which people often prove more wicked than beasts.")
@@ -171,6 +175,7 @@ s14 = Video.create!(title: "Avatar: The Last Airbender", rating: "TV-MA", runtim
 VideoGenre.create!(video_id: s14.id, genre_id: friendship.id)
 VideoGenre.create!(video_id: s14.id, genre_id: fantasy.id)
 VideoGenre.create!(video_id: s14.id, genre_id: action.id)
+VideoGenre.create!(video_id: s14.id, genre_id: comedy.id)
 
 #Additional Movies
 
