@@ -60,7 +60,7 @@ class Spotlight extends React.Component {
                         loop={true}
                         id='spotlight-video'/>
                     <div id="spotlight-video-info">
-                        {this._handleSpotlightLogo()}
+                        {/* {this._handleSpotlightLogo()} */}
                         <p>{this.props.video.description}</p>
                         <div className="spotlight-button-container">
                             <button onClick={this._handlePlay} id="spotlight-play-button">▶ Play</button>
