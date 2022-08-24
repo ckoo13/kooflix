@@ -34,7 +34,8 @@ class Spotlight extends React.Component {
             )
         } else if (this.props.video.id === 12) {
             return (
-                <img id="spiderman-logo" src={window.spidermanlogoUrl} alt="" />
+                // fix this webp file spiderman
+                <img id="spiderman-logo" src={window.hospitalplaylistlogoUrl} alt="" />
             )
         }
     }
