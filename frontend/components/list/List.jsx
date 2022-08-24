@@ -28,7 +28,7 @@ class List extends React.Component {
         return (
             profileListItems.map(listItem => {
                 return (
-                    <VideoContainer video={allVideos[listItem.video_id]} />
+                    <VideoContainer className="list-video" video={allVideos[listItem.video_id]} />
                 )
             })
         )
@@ -39,10 +39,14 @@ class List extends React.Component {
         console.log(this.props.currentProfileId)
         console.log(this.props.allListItems)
         return(
-            <div>
+            <div className='browse-container'>
                 <NavBarContainer />
-                <h1>My List</h1>
-                {this._renderCorrectVideos()}
+                <div className="list-content">
+                    <h1 className="list-header">My List</h1>
+                    <div className="list-videos-container">
+                        {this._renderCorrectVideos()}
+                    </div>
+                </div>
             </div>
         )
     }
