@@ -21,4 +21,6 @@ export const findVideoInAllLists = (lists, videoId, profileId) => {
             return lists[i];
         }
     }
+
+    return undefined;
 }

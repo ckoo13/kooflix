@@ -5,6 +5,7 @@ import AddIcon from '@mui/icons-material/Add';
 import VolumeUpIcon from '@mui/icons-material/VolumeUp';
 import { withRouter } from "react-router-dom";
 import { findVideoInAllLists } from "../../reducers/selectors";
+import RemoveIcon from '@mui/icons-material/Remove';
 
 class Video extends React.Component {
     constructor(props){
@@ -19,6 +20,8 @@ class Video extends React.Component {
         this._handlePlay = this._handlePlay.bind(this);
         this._unmute = this._unmute.bind(this);
         this._addToMyList = this._addToMyList.bind(this);
+        this._displayListButton = this._displayListButton.bind(this);
+        this._removeFromMyList = this._removeFromMyList.bind(this);
 
         this.videoRef = React.createRef();
         this.imgRef = React.createRef();
@@ -57,16 +60,33 @@ class Video extends React.Component {
 
         const toDeleteItem = findVideoInAllLists(this.props.lists, this.props.video.id, this.props.currentProfileId)
 
-        if (this.state.addedToList === false) {
-            this.props.makeListItem(newListItem)
-            this.setState({addedToList: true})
-            // need to add logic for removing a listItem and how the button will react
-        } else if (this.state.addedToList === true) {
-            this.props.removeListItem(toDeleteItem.id)
-            this.setState({addedToList: false})
-        }
+        this.props.makeListItem(newListItem)
     }
 
+    // removing listItem
+    _removeFromMyList(e) {
+        e.preventDefault();
+
+        const thisVideo = findVideoInAllLists(this.props.lists, this.props.video.id, this.props.currentProfileId)
+
+        this.props.removeListItem(thisVideo.id)
+    }
+
+    // function for displaying myList button
+    _displayListButton() {
+        const thisVideo = findVideoInAllLists(this.props.lists, this.props.video.id, this.props.currentProfileId)
+
+        console.log(thisVideo)
+        if (thisVideo !== undefined) {
+            return (
+                <RemoveIcon onClick={this._removeFromMyList} className="small-video-icon" />
+            )
+        } else { 
+            return (
+                <AddIcon onClick={this._addToMyList} className="small-video-icon" />
+            )
+        }
+    }
     
 
     render() {
@@ -93,7 +113,7 @@ class Video extends React.Component {
                                 <div className="small-video-icons">
                                     <PlayArrowIcon onClick={this._handlePlay} className="small-video-icon" />
                                     {/* add logic for mylist to this button */}
-                                    <AddIcon onClick={this._addToMyList} className="small-video-icon" />
+                                    {this._displayListButton()}
                                     <VolumeUpIcon onClick={this._unmute} className="small-video-icon" />
                                 </div>
                                 <div className="small-video-info-top">
