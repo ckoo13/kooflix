@@ -4,13 +4,15 @@ import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import AddIcon from '@mui/icons-material/Add';
 import VolumeUpIcon from '@mui/icons-material/VolumeUp';
 import { withRouter } from "react-router-dom";
+import { findVideoInAllLists } from "../../reducers/selectors";
 
 class Video extends React.Component {
     constructor(props){
         super(props)
 
         this.state = {
-            isHovered: false
+            isHovered: false,
+            addedToList: false
         }
 
         this._handleHover = this._handleHover.bind(this);
@@ -52,10 +54,19 @@ class Video extends React.Component {
         e.preventDefault();
 
         const newListItem = {video_id: this.props.video.id, profile_id: this.props.currentProfileId}
-        this.props.makeListItem(newListItem)
+
+        const toDeleteItem = findVideoInAllLists(this.props.lists, this.props.video.id, this.props.currentProfileId)
+
+        if (this.state.addedToList === false) {
+            this.props.makeListItem(newListItem)
+            this.setState({addedToList: true})
+            // need to add logic for removing a listItem and how the button will react
+        } else if (this.state.addedToList === true) {
+            this.props.removeListItem(toDeleteItem.id)
+            this.setState({addedToList: false})
+        }
     }
 
-    // need to add logic for removing a listItem and how the button will react
     
 
     render() {
@@ -76,7 +87,8 @@ class Video extends React.Component {
                                     muted={false}
                                     loop={true}
                                         /> */}
-                            <video className="small-video-clip" onClick={this._handlePlay} ref={this.videoRef} src={this.props.video.videoUrl} autoPlay={true} muted={true} loop></video>
+                                        {/* set playing back to true here */}
+                            <video className="small-video-clip" onClick={this._handlePlay} ref={this.videoRef} src={this.props.video.videoUrl} autoPlay={false} muted={true} loop></video>
                             <div className="small-video-info">
                                 <div className="small-video-icons">
                                     <PlayArrowIcon onClick={this._handlePlay} className="small-video-icon" />

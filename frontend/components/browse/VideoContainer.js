@@ -5,7 +5,8 @@ import Video from "./Video";
 
 const mapStateToProps = (state, ownProps) => {
     return {
-        currentProfileId: state.session.currentProfile
+        currentProfileId: state.session.currentProfile,
+        lists: Object.values(state.entities.lists)
     }
 };
 

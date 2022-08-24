@@ -14,3 +14,11 @@ export const selectShowsOrMovies = (videotype, videos) => {
   
     return sorted;
 };
+
+export const findVideoInAllLists = (lists, videoId, profileId) => {
+    for (let i = 0; i < lists.length; i++) {
+        if (lists[i].profile_id === profileId && lists[i].video_id === videoId) {
+            return lists[i];
+        }
+    }
+}

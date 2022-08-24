@@ -37,5 +37,5 @@ export const getListItem = listId => dispatch => fetchListItem(listId)
 export const makeListItem = list => dispatch => createListItem(list)
     .then(list => dispatch(receiveList(list)))
 
-export const removeListItem = listId => dispatch => removeList(listId)
+export const removeListItem = listId => dispatch => deleteListItem(listId)
     .then(() => dispatch(removeList(listId)))
