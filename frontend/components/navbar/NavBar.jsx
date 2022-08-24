@@ -62,7 +62,7 @@ class NavBar extends React.Component {
 
                 <div className="navbar-right-container">
                     <a href="https://www.linkedin.com/in/calvin-koo-9aa869158/">
-                        <img id="splash-linkedin-logo" src={window.linkedinUrl} alt="" />
+                        {/* <img id="splash-linkedin-logo" src={window.linkedinUrl} alt="" /> */}
                     </a>
                     <a href="https://github.com/ckoo13">
                         <img id="splash-github-logo" src={window.githubUrl} alt="" />
