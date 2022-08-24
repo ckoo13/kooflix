@@ -71,7 +71,7 @@ export default class SessionForm extends React.Component {
             <div className='login-wrapper'>
                 {/* background img */}
                 <div className='login-wrapper-background'>
-                    {/* <img id="session-splash-background" src={window.splashUrl} alt="" /> */}
+                    <img id="session-splash-background" src={window.splashUrl} alt="" />
                 </div>
                 {/* header */}
                 <div className='session-header'>
