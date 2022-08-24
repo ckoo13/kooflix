@@ -9,7 +9,7 @@ import EditProfilesIndexContainer from './profile/EditProfilesIndexContainer';
 import EditProfileFormContainer from './profile/EditProfileFormContainer';
 import AddProfileContainer from './profile/AddProfileContainer';
 // import Splash from './splash/Splash';
-import Splash from './splash/Splash'
+import Splash from './splash/splash'
 import BrowseContainer from './browse/BrowseContainer';
 import VideoPlayerContainer from './video_player/VideoPlayerContainer';
 import MoviesContainer from './movies/MoviesContainer';
