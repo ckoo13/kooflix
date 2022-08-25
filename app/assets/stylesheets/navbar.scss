@@ -61,6 +61,7 @@
 
 #dropdown:hover #dropdown-links{
     display: flex;
+    z-index: 100;
 }
 
 #dropdown #dropdown-links {
@@ -71,7 +72,7 @@
     margin-right: 50px;
     z-index: 1;
     left: -150px;
-    top: 50px;
+    top: 40px;
     padding: 10px 15px 10px;
     display: none;
     justify-content: space-between;
@@ -85,6 +86,10 @@
 
 #dropdown .dropdown-link {
     margin-left: 8px;
+
+    &:hover {
+        text-decoration: underline;
+    }
 }
 
 #dropdown-manage-profiles {
@@ -105,6 +110,10 @@
 #dropdown-profiles-name {
     cursor: pointer;
     margin-left: 5px;
+
+    &:hover {
+        text-decoration: underline;
+    }
 }
 
 #line {
