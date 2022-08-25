@@ -21,7 +21,7 @@ ActiveRecord::Base.connection.reset_pk_sequence!("videos")
 ActiveRecord::Base.connection.reset_pk_sequence!("profiles")
 
 #Creating Demo User
-demo = User.create!(email: 'demouser@gmail.com', password: 1234567)
+demo = User.create!(email: 'demouser@gmail.com', password: "password")
 
 #Genres
 action = Genre.create!(name: "Action")

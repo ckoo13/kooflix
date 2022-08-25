@@ -46,37 +46,37 @@ export default class SessionForm extends React.Component {
     }
 
     demoLogin() {
-        const user = {email: 'demouser@gmail.com', password: 1234567}
+        const demo = {email: 'demouser@gmail.com', password: 1234567}
 
-        const speed = 100;
+        const speed = 150;
 
         // demo login fill in input fields
-        if (this.state.username !== demo.username) {
-                 const inputUsername = setInterval(() => {
-                     if (this.state.username !== demo.username) {
-                         const temp = demo.username.slice(0, this.state.username.length + 1);
-                         this.setState({ username: temp })
-                     } else {
-                         clearInterval(inputUsername);
-                         animatePW();
-                     }
-                 }, speed)
-             }
-             const animatePW = () => {
-                 if (this.state.password !== demo.password) {
-                     const inputPassword = setInterval(() => {
-                         if (this.state.password !== demo.password) {
-                             const temp = demo.password.slice(0, this.state.password.length + 1);
-                             this.setState({ password: temp });
-                         } else {
-                             clearInterval(inputPassword);
-                             this.props.login(demo).then(() => this.props.history.push('/'));
-                         }
-                     }, speed);
-                 }
-             }
+        // if (this.state.email !== demo.email) {
+        //          const inputUsername = setInterval(() => {
+        //              if (this.state.email !== demo.email) {
+        //                  const temp = demo.email.slice(0, this.state.email.length + 1);
+        //                  this.setState({ email: temp })
+        //              } else {
+        //                  clearInterval(inputUsername);
+        //                  animatePW();
+        //              }
+        //          }, speed)
+        //      }
+        //      const animatePW = () => {
+        //          if (this.state.password !== demo.password) {
+        //              const inputPassword = setInterval(() => {
+        //                  if (this.state.password !== demo.password) {
+        //                      const temp = demo.password.slice(0, this.state.password.length + 1);
+        //                      this.setState({ password: temp });
+        //                  } else {
+        //                      clearInterval(inputPassword);
+        //                      this.props.processForm(demo).then(() => this.props.history.push('/profiles'));
+        //                  }
+        //              }, speed);
+        //          }
+        //      }
 
-        this.props.processForm(user)
+        this.props.processForm(demo)
             .then(() => this.props.history.push('/profiles'))
     }
   
