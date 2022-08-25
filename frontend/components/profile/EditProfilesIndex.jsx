@@ -20,7 +20,7 @@ class EditProfilesIndex extends React.Component {
                         <div>
                             <Link className="profile-image-link" to={`/profiles/${profile.id}/edit`}>
                                 <div className="avatar-wrapper">
-                                    <img className="profile-image" src={editProfileURL} alt="" />
+                                    <img className="profile-image" src="https://kooflix-seeds.s3.us-west-1.amazonaws.com/Assets/EditProfileIcon.png" alt="" />
                                     <p className="profile-image-name">{profile.name}</p>
                                 </div>
                              </Link>
@@ -36,7 +36,7 @@ class EditProfilesIndex extends React.Component {
         return (
             <div className="profiles-index-main-container">
                 <div className="profiles-header">
-                    <img className="profiles-splash-logo" src={logoUrl} alt="" />
+                    <img className="profiles-splash-logo" src="https://kooflix-seeds.s3.us-west-1.amazonaws.com/Assets/logo.png" alt="" />
                 </div>
                 <div className="profiles-gate-container">
                     <div className="profiles-index-container">
@@ -48,7 +48,7 @@ class EditProfilesIndex extends React.Component {
                                     <div>
                                         <Link className="profile-image-link" to={'/profiles/new'}>
                                             <div>
-                                                <img className="profile-image-edit" src={addProfileURL} alt="" />
+                                                <img className="profile-image-edit" src="https://kooflix-seeds.s3.us-west-1.amazonaws.com/Assets/add_profile.png" alt="" />
                                                 <p className="profile-image-name-edit">Add Profile</p>
                                             </div>
                                         </Link>

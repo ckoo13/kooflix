@@ -48,7 +48,7 @@ class EditProfileForm extends React.Component {
                     </div>
                     <div className="edit-profile-form">
                         <div className="profile-avatar">
-                            <img src={profileURL} alt="" />
+                            <img src="https://kooflix-seeds.s3.us-west-1.amazonaws.com/Assets/profile_icon_default.png" alt="" />
                         </div>
                         <div className="edit-profile-name-input">
                             {/* insert value={profile.name} later */}

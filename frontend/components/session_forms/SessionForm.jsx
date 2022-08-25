@@ -71,13 +71,13 @@ export default class SessionForm extends React.Component {
             <div className='login-wrapper'>
                 {/* background img */}
                 <div className='login-wrapper-background'>
-                    <img id="session-splash-background" src={window.splashUrl} alt="" />
+                    <img id="session-splash-background" src="https://kooflix-seeds.s3.us-west-1.amazonaws.com/Assets/splash.jpg" alt="" />
                 </div>
                 {/* header */}
                 <div className='session-header'>
                     {/* this image is a placeholder for now */}
                     <Link to={'/'}>
-                        <img id='session-splash-logo' src={window.logoUrl} alt="" />
+                        <img id='session-splash-logo' src="https://kooflix-seeds.s3.us-west-1.amazonaws.com/Assets/logo.png" alt="" />
                     </Link>
                 </div>
                 {/* signup body */}

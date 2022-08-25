@@ -28,7 +28,7 @@ class ProfileIndex extends React.Component {
                         <div>
                             <Link onClick={(e) => this.handleSubmit(e, profile.id)} className="profile-image-link" to={'/browse'}>
                                 <div className="avatar-wrapper">
-                                    <img className="profile-image" src={profileURL} alt="" />
+                                    <img className="profile-image" src="https://kooflix-seeds.s3.us-west-1.amazonaws.com/Assets/profile_icon_default.png" alt="" />
                                     <p className="profile-image-name">{profile.name}</p>
                                 </div>
                              </Link>
@@ -45,7 +45,7 @@ class ProfileIndex extends React.Component {
         return (
             <div className="profiles-index-main-container">
                 <div className="profiles-header">
-                    <img className="profiles-splash-logo" src={logoUrl} alt="" />
+                    <img className="profiles-splash-logo" src="https://kooflix-seeds.s3.us-west-1.amazonaws.com/Assets/logo.png" alt="" />
                 </div>
                 <div className="profiles-gate-container">
                     <div className="profiles-index-container">
@@ -57,7 +57,7 @@ class ProfileIndex extends React.Component {
                                     <div>
                                         <Link className="profile-image-link" to={'/profiles/new'}>
                                             <div>
-                                                <img className="profile-image" src={addProfileURL} alt="" />
+                                                <img className="profile-image" src="https://kooflix-seeds.s3.us-west-1.amazonaws.com/Assets/add_profile.png" alt="" />
                                                 <p className="profile-image-name">Add Profile</p>
                                             </div>
                                         </Link>

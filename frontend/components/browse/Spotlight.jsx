@@ -1,6 +1,7 @@
 import React from "react";
 import ReactPlayer from "react-player";
 import { withRouter } from "react-router-dom";
+import VolumeUpIcon from '@mui/icons-material/VolumeUp';
 
 class Spotlight extends React.Component {
     constructor(props) {
@@ -26,16 +27,16 @@ class Spotlight extends React.Component {
     _handleSpotlightLogo() {
         if (this.props.video.id === 1) {
             return (
-                <img src={window.itaewonClassLogoUrl} alt="" />
+                <img src="https://kooflix-seeds.s3.us-west-1.amazonaws.com/Assets/itaewonclasslogo.png" alt="" />
             )
         } else if (this.props.video.id === 3) {
             return (
-                <img src={window.hospitalplaylistlogoUrl} alt="" />
+                <img src="https://kooflix-seeds.s3.us-west-1.amazonaws.com/Assets/hospitalplaylistlogo.png" alt="" />
             )
         } else if (this.props.video.id === 12) {
             return (
                 // fix this webp file spiderman
-                <img id="spiderman-logo" src={window.spidermanlogoUrl} alt="" />
+                <img id="spiderman-logo" src="https://kooflix-seeds.s3.us-west-1.amazonaws.com/Assets/spidermanlogo.png" alt="" />
             )
         }
     }
@@ -64,7 +65,7 @@ class Spotlight extends React.Component {
                         <p>{this.props.video.description}</p>
                         <div className="spotlight-button-container">
                             <button onClick={this._handlePlay} id="spotlight-play-button">▶ Play</button>
-                            <button id="spotlight-audio-button"><img id="spotlight-audio-icon" src={window.audioIconUrl} alt="" /></button>
+                            <button id="spotlight-audio-button"><VolumeUpIcon /></button>
                         </div>
                     </div>
                 </div>

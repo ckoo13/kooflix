@@ -36,7 +36,7 @@ class NavBar extends React.Component {
             if (this.props.currentProfile != profile.id) {
                 return (
                     <li key={profile.id} id="dropdown-profiles-li">
-                        <img onClick={(e) => this._handleProfileClick(e, profile.id)} className="navbar-profile-image" src={profileURL} alt="" />
+                        <img onClick={(e) => this._handleProfileClick(e, profile.id)} className="navbar-profile-image" src="https://kooflix-seeds.s3.us-west-1.amazonaws.com/Assets/profile_icon_default.png" alt="" />
                         <p id="dropdown-profiles-name" onClick={(e) => this._handleProfileClick(e, profile.id)} >{profile.name}</p>
                     </li>
                 )
@@ -49,7 +49,7 @@ class NavBar extends React.Component {
             <header className={this.state.color ? "navbar-container" : "navbar-container-bg"}>
                 <div className="navbar-left">
                     <Link to={'/browse'}>
-                        <img id='navbar-logo' src={window.logoUrl} alt="" />
+                        <img id='navbar-logo' src="https://kooflix-seeds.s3.us-west-1.amazonaws.com/Assets/logo.png" alt="" />
                     </Link>
                     <div className="navbar-left-links">
                         <Link className="navbar-left-link" to={'/browse'}>Home</Link>
@@ -63,13 +63,13 @@ class NavBar extends React.Component {
                 <div className="navbar-right-container">
                     <a href="https://www.linkedin.com/in/calvin-koo-9aa869158/">
                         {/* fix this to AWS hosting */}
-                        <img id="splash-linkedin-logo" src={window.linkedinUrl} alt="" />
+                        <img id="splash-linkedin-logo" src="https://kooflix-seeds.s3.us-west-1.amazonaws.com/Assets/linkedin.png" alt="" />
                     </a>
                     <a href="https://github.com/ckoo13">
-                        <img id="splash-github-logo" src={window.githubUrl} alt="" />
+                        <img id="splash-github-logo" src="https://kooflix-seeds.s3.us-west-1.amazonaws.com/Assets/github.png" alt="" />
                     </a>
                     <div id="dropdown">
-                        <img className="navbar-profile-image" src={profileURL} alt="" />
+                        <img className="navbar-profile-image" src="https://kooflix-seeds.s3.us-west-1.amazonaws.com/Assets/profile_icon_default.png" alt="" />
                         <ul id="dropdown-links">
                             {this._dropdownProfiles()}
                             <li className="dropdown-link"><Link id="dropdown-manage-profiles" to={'/profiles/edit'}>Manage Profiles</Link></li>
