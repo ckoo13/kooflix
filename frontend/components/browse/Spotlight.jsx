@@ -54,7 +54,7 @@ class Spotlight extends React.Component {
                 <div onClick={this._unmute} className="spotlight-container">
                     <ReactPlayer url={this.props.video.videoUrl} 
                         // set playing back to true here
-                        playing={false}
+                        playing={true}
                         width='150%'
                         height='150%'
                         muted={true}

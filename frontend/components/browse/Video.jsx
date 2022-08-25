@@ -108,7 +108,7 @@ class Video extends React.Component {
                                     loop={true}
                                         /> */}
                                         {/* set playing back to true here */}
-                            <video className="small-video-clip" onClick={this._handlePlay} ref={this.videoRef} src={this.props.video.videoUrl} autoPlay={false} muted={true} loop></video>
+                            <video className="small-video-clip" onClick={this._handlePlay} ref={this.videoRef} src={this.props.video.videoUrl} autoPlay={true} muted={true} loop></video>
                             <div className="small-video-info">
                                 <div className="small-video-icons">
                                     <PlayArrowIcon onClick={this._handlePlay} className="small-video-icon" />
