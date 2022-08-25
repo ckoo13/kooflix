@@ -102,6 +102,11 @@
     padding: 10px 15px;
     width: 100%;
     cursor: pointer;
+
+    &:hover {
+        cursor: pointer;
+        background-color: #fa1c27;
+    }
 }
 
 #splash-content-button {
@@ -114,6 +119,11 @@
     font-weight: 400;
     padding: 15px 10px;
     width: 20%;
+
+    &:hover {
+        cursor: pointer;
+        background-color: #fa1c27;
+    }
 }
 
 #splash-background-image {

@@ -6,6 +6,10 @@ class GenresIndex extends React.Component {
         super(props)
     }
 
+    componentDidMount() {
+        this.props.getVideos();
+    }
+
     render() {
         return (
             <div>
