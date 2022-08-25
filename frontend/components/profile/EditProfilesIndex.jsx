@@ -47,7 +47,7 @@ class EditProfilesIndex extends React.Component {
                                 <li>
                                     <div>
                                         <Link className="profile-image-link" to={'/profiles/new'}>
-                                            <div>
+                                            <div id="profile-image-edit-container">
                                                 <img className="profile-image-edit" src="https://kooflix-seeds.s3.us-west-1.amazonaws.com/Assets/add_profile.png" alt="" />
                                                 <p className="profile-image-name-edit">Add Profile</p>
                                             </div>

@@ -82,6 +82,11 @@
     font-weight: 400;
     padding: 0.5em 1.5em;
     cursor: pointer;
+
+    &:hover {
+        cursor: pointer;
+        transform: scale(1.1);
+    }
 }
 
 #edit-cancel-button {
@@ -92,6 +97,13 @@
     color: grey;
     cursor: pointer;
     padding: 0.5em 1.5em;
+
+    &:hover {
+        cursor: pointer;
+        transform: scale(1.1);
+        color: white;
+        border: 1px solid white;
+    }
 }
 
 #edit-delete-button {
@@ -102,5 +114,12 @@
     color: grey;
     cursor: pointer;
     padding: 0.5em 1.5em;
+
+    &:hover {
+        cursor: pointer;
+        transform: scale(1.1);
+        color: white;
+        border: 1px solid white;
+    }
 }
 

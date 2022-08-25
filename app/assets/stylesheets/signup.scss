@@ -80,6 +80,11 @@
     padding: 15px 10px;
     width: 100%;
     cursor: pointer;
+
+    &:hover {
+        cursor: pointer;
+        background-color: #ff2d38;
+    }
 }
 
 .session-redirect-container {
@@ -126,6 +131,11 @@
 
 #session-redirect-link {
     text-decoration: none;
+
+    &:hover {
+        cursor: pointer;
+        text-decoration: underline;
+    }
 }
 
 #session-errors {

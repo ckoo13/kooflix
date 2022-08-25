@@ -39,7 +39,7 @@ class EditProfileForm extends React.Component {
         return (
             <div className="edit-profile-form-whole-container">
                 <div className="edit-form-header">
-                    <img src={logoUrl} alt="" />
+                    <img src="https://kooflix-seeds.s3.us-west-1.amazonaws.com/Assets/logo.png" alt="" />
                 </div>
                 <div className="edit-profile-main-container">
                     <div className="edit-profile-description">

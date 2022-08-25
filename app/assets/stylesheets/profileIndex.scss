@@ -41,9 +41,14 @@
     height: 10vw;
     max-height: 200px;
     max-width: 200px;
-    padding: 10px 10px;
-    margin: auto 10px;
+    margin: auto 15px;
+    margin-top: 10px;
     border-radius: 6px;
+
+    &:hover {
+        border: 1px solid white;
+        cursor: pointer;
+    }
 }
 
 .profile-image-link {
@@ -72,4 +77,28 @@
     display: block;
     margin: 2em 0 1em;
     padding: 0.5em 1.5em;
+
+    &:hover {
+        cursor: pointer;
+        transform: scale(1.1);
+        color: white;
+        border: 1px solid white;
+    }
+}
+
+#profile-index-add-container {
+    &:hover{
+        cursor: pointer;
+        border: none;
+        transform: scale(1.1);
+    }
+}
+
+#profile-index-add {
+    height: 10vw;
+    max-height: 200px;
+    max-width: 200px;
+    margin: auto 15px;
+    margin-top: 10px;
+    border-radius: 6px;
 }

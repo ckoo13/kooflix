@@ -61,8 +61,8 @@ class ProfileIndex extends React.Component {
                                 <li>
                                     <div>
                                         <Link className="profile-image-link" to={'/profiles/new'}>
-                                            <div>
-                                                <img className="profile-image" src="https://kooflix-seeds.s3.us-west-1.amazonaws.com/Assets/add_profile.png" alt="" />
+                                            <div id="profile-index-add-container">
+                                                <img id="profile-index-add" src="https://kooflix-seeds.s3.us-west-1.amazonaws.com/Assets/add_profile.png" alt="" />
                                                 <p className="profile-image-name">Add Profile</p>
                                             </div>
                                         </Link>
