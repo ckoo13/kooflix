@@ -3,14 +3,8 @@ import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
 
-// testing api util functions
-import { fetchVideos, fetchVideo } from './util/video_util'
 
 document.addEventListener("DOMContentLoaded", () => {
-    //testing purposes
-    window.videos = fetchVideos;
-    window.video = fetchVideo;
-
     let store;
 
     if (window.currentUser) {

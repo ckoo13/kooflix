@@ -9,7 +9,7 @@ const mapStateToProps = state => {
     return {
         videos: state.entities.videos,
         genres: state.entities.genres,
-        lists: state.entities.lists
+        lists: state.entities.lists,
     }
 };
 

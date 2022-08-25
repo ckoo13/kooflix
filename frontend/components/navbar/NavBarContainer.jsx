@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import NavBar from "./NavBar";
 import { logout } from "../../actions/session_actions";
-import { getCurrentProfile } from "../../actions/profile_actions";
+import { getCurrentProfile, getProfiles } from "../../actions/profile_actions";
 
 const mapStateToProps = ({session, entities: {users, profiles}}) => {
     return {
@@ -15,7 +15,8 @@ const mapStateToProps = ({session, entities: {users, profiles}}) => {
 const mapDispatchToProps = dispatch => {
     return {
         logout: () => dispatch(logout()),
-        getCurrentProfile: profileId => dispatch(getCurrentProfile(profileId))
+        getCurrentProfile: profileId => dispatch(getCurrentProfile(profileId)),
+        getProfiles: currentUser => dispatch(getProfiles(currentUser)),
     }
 }
 

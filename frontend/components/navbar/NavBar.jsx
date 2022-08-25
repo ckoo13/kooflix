@@ -14,6 +14,8 @@ class NavBar extends React.Component {
     }
 
     componentDidMount() {
+        this.props.getProfiles(this.props.currentUser)
+        this.props.getCurrentProfile(this.props.currentProfile)
         window.addEventListener('scroll', this._changeColor)
     }
 

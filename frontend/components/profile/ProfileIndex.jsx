@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, Redirect } from "react-router-dom";
 
+
 class ProfileIndex extends React.Component {
     constructor(props){
         super(props);
@@ -14,8 +15,12 @@ class ProfileIndex extends React.Component {
 
     handleSubmit(e, id) {
         e.preventDefault();
-        this.props.getCurrentProfile(id)
-            .then(() => this.props.history.push('/browse'));
+        this.props.receiveCurrentProfile(id)
+
+        this.props.getProfile(id)
+            .then(() => {
+                this.props.history.push('/browse')
+        });
     }
 
     renderProfiles() {
