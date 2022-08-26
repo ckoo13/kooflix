@@ -12,6 +12,7 @@ Genre.destroy_all
 VideoGenre.destroy_all
 Video.destroy_all
 User.destroy_all
+Profile.destroy_all
 
 # sets primary key id back to 1 for each Object
 ActiveRecord::Base.connection.reset_pk_sequence!("users")
