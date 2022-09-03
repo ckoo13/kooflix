@@ -19,18 +19,18 @@ const App = () => {
     return (
         <div>
             <Switch>
+                <AuthRoute path ='/' exact component={Splash} />
                 <ProtectedRoute path='/myList' exact component={ListContainer} />
                 <ProtectedRoute path='/shows' exact component={ShowsContainer} />
                 <ProtectedRoute path='/movies' exact component={MoviesContainer} />
-                <ProtectedRoute path='/browse/:videoid' exact component={VideoPlayerContainer} />
                 <ProtectedRoute path='/browse' component={BrowseContainer} />
                 <AuthRoute path='/login' component={LoginFormContainer} />
                 <AuthRoute path='/signup' component={SignupFormContainer} />
                 <ProtectedRoute path='/profiles' exact component={ProfileIndexContainer} />
                 <ProtectedRoute path='/profiles/edit' exact component={EditProfilesIndexContainer} />
-                <ProtectedRoute path='/profiles/:profileid/edit' exact component={EditProfileFormContainer} />
                 <ProtectedRoute path='/profiles/new' exact component={AddProfileContainer} />
-                <AuthRoute path ='/' exact component={Splash} />
+                <ProtectedRoute path='/profiles/:profileid/edit' exact component={EditProfileFormContainer} />
+                <ProtectedRoute path='/browse/:videoid' exact component={VideoPlayerContainer} />
             </Switch>
         </div>
     )
