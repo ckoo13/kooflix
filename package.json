@@ -51,6 +51,7 @@
     "webpack-cli": "^4.10.0"
   },
   "devDependencies": {
+    "graceful-fs": "^4.2.10",
     "terser-webpack-plugin": "^5.3.6"
   }
 }
