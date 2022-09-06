@@ -7,6 +7,7 @@ export const REMOVE_SESSION_ERRORS = 'REMOVE_SESSION_ERRORS';
 
 //regular action creators
 export const receiveCurrentUser = (currentUser) => {
+    debugger;
     return {
         type: RECEIVE_CURRENT_USER,
         currentUser

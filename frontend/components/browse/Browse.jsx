@@ -22,7 +22,7 @@ class Browse extends React.Component {
               <NavbarContainer />
               <SpotlightContainer video={this.props.videos[1]}/>
               {/* this should be the Genres Index */}
-              <GenresIndexContainer genres={this.props.genres} />
+              <GenresIndexContainer videos={this.props.videos} genres={this.props.genres} />
           </div>
         )
     }

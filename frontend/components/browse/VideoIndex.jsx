@@ -42,7 +42,6 @@ class VideoIndex extends React.Component  {
 
         let distance = this.listRef.current.getBoundingClientRect().x - 50
         const ref = this.listRef.current
-        console.log(this.state.videos);
         const slideLength = this.state.videos.length;
 
         // this logic means that we have to be specific about how many videos we are passing into this component
