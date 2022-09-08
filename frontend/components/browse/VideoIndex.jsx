@@ -21,6 +21,7 @@ class VideoIndex extends React.Component  {
         this._handleLeftClick = this._handleLeftClick.bind(this)
         this._handleRightClick = this._handleRightClick.bind(this)
         this.listRef = React.createRef();
+        this.renderVideos = this.renderVideos.bind(this);
     };
     
     // method for carousel left click
@@ -59,6 +60,24 @@ class VideoIndex extends React.Component  {
         this.setState({mounted: true})
     }
 
+    componentDidUpdate() {
+        this.render()
+    }
+
+    renderVideos() {
+        const videoList = selectVideoGenres(this.props.genre, this.props.videos)
+
+        {
+            return (
+                videoList.map((video, idx) => {
+                    return (
+                        <VideoContainer video={video} key={idx}/>
+                    )
+                })
+            )
+        }
+    }
+
     render() {
             if (!this.state.mounted) {
                 return (
@@ -67,18 +86,18 @@ class VideoIndex extends React.Component  {
                     </div>
                 )
             } else {
-                // console.log(this.state.videos)
                 return (
                     <div className="video-index-container">
                     <p className="genre-title">{this.props.genre.name}</p>
                     <div className="wrapper">
                         <ArrowBackIosIcon className="slider-arrow left" onClick={this._handleLeftClick} style={{display: !this.state.isMoved && "none"}}></ArrowBackIosIcon>
                         <div className="thumbnail-container" ref={this.listRef}>
-                            {this.state.videos.map((video, idx) => {
+                            {/* {this.state.videos.map((video, idx) => {
                                 return (
                                     <VideoContainer video={video} key={idx}/>
                                 )
-                            })}
+                            })} */}
+                            {this.renderVideos()}
                         </div>
                         <ArrowForwardIosIcon className="slider-arrow right" onClick={this._handleRightClick}></ArrowForwardIosIcon>
                     </div>
