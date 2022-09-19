@@ -24,6 +24,11 @@ ActiveRecord::Base.connection.reset_pk_sequence!("profiles")
 #Creating Demo User
 demo = User.create!(email: 'demouser@gmail.com', password: "password")
 
+#Creating profiles for demo user
+calvin = Profile.create!(name: "Calvin", avatar: "default", user_id: 1)
+justyn = Profile.create!(name: "Justyn", avatar: "default", user_id: 1)
+marco = Profile.create!(name: "Marco", avatar: "default", user_id: 1)
+
 #Genres
 action = Genre.create!(name: "Action")
 korean = Genre.create!(name: "Korean")
