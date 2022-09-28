@@ -13,6 +13,10 @@ class ProfileIndex extends React.Component {
         this.props.getProfiles(this.props.currentUser);
     }
 
+    componentDidUpdate() {
+        this.render();
+    }
+
     handleSubmit(e, id) {
         e.preventDefault();
         this.props.receiveCurrentProfile(id)
