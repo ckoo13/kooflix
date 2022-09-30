@@ -14,6 +14,7 @@ class ProfileIndex extends React.Component {
     }
 
     componentDidUpdate() {
+        this.props.getProfiles(this.props.currentUser);
         this.render();
     }
 
