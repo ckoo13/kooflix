@@ -1,4 +1,4 @@
-# Welcome to Kooflix
+# Kooflix
 
 Check out the [live site](https://kooflix.herokuapp.com/#/)!
 
@@ -13,13 +13,13 @@ Kooflix is a full-stack clone of the popular video-streaming application Netflix
 - Hosting: Heroku
 - Storage: AWS S3
 
-## MVPs
+## Features
 
 ### Profiles 
 
 Users can sign in and create a profile for each of their accounts. They also have the option of creating, editing, and deleting profiles associated with an account.
 
-![ProfilesGif](/readmegifs/profilesMVP.gif)
+![ProfilesGif](/app/assets/images/profiles.png)
 
 
 ```render() {
@@ -64,7 +64,7 @@ Users can sign in and create a profile for each of their accounts. They also hav
 
 Once logged in to a profile, users are able to view the homepage which has titles grouped by specific genres they belong to. In addition, users can use the navbar to filter videos by their type, either being a movie or a show. 
 
-![BrowseGif](/readmegifs/BrowseMVP.gif)
+![BrowseGif](/app/assets/images/browse.png)
 
 ``` render() {
         return (
@@ -87,7 +87,6 @@ Once logged in to a profile, users are able to view the homepage which has title
                     </div>
                 )
             } else {
-                // console.log(this.state.videos)
                 return (
                     <div className="video-index-container">
                     <p className="genre-title">{this.props.genre.name}</p>
@@ -113,7 +112,7 @@ Once logged in to a profile, users are able to view the homepage which has title
 
 when viewing titles, users can add title to their list which corresponds to the profile they are currently logged into. This feature was made by using a selector which would select the title corresponding to a certain profile, which was determined by a joins table created in the backend. 
 
-![MyListGif](/readmegifs/MyListMVP.gif)
+![MyListGif](/app/assets/images/mylist.png)
 
 ``` _renderCorrectVideos() {
         const listItems = this.props.allListItems;
