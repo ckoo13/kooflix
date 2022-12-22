@@ -1,5 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
+import { connect } from "react-redux";
 
 import { Carousel } from '@trendyol-js/react-carousel';
 import VideoContainer from "./VideoContainer";
@@ -7,13 +8,20 @@ import { selectVideoGenres } from "../../reducers/selectors";
 import { render } from "react-dom";
 
 const VideoIndex = (props) => {
-    console.log(props);
-    
-    const [videos, setVideos] = useState()
+
+    const { genre, getVideos, videos} = props;
+
+    const [video, setVideos] = useState([]);
+
+
+    useEffect(() => {
+        const videoList = selectVideoGenres(genre, videos)
+        setVideos(videoList);
+    }, [])
 
     return (
-        <div>
-
+        <div className="video-index-container">
+            <p className="genre-title">{genre.name}</p>
         </div>
     )
 }
