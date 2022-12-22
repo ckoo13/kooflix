@@ -62,6 +62,10 @@ class MovieVideoIndex extends React.Component  {
         this.setState({mounted: true})
     }
 
+    componentDidUpdate() {
+        this.render();
+    }
+
     render() {
             if (!this.state.mounted) {
                 return (

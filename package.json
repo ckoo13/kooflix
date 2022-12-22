@@ -40,7 +40,9 @@
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@mui/icons-material": "^5.8.4",
     "@mui/material": "^5.10.1",
+    "@trendyol-js/react-carousel": "^3.0.0",
     "babel-loader": "^8.2.5",
+    "css-loader": "^6.7.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-player": "^2.10.1",
@@ -50,12 +52,16 @@
     "redux": "^4.2.0",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.4.1",
+    "slick-carousel": "^1.8.1",
+    "style-loader": "^3.3.1",
     "terser": "^5.15.0",
     "webpack": "^5.74.0"
   },
   "devDependencies": {
+    "file-loader": "^6.2.0",
     "graceful-fs": "^4.2.10",
     "terser-webpack-plugin": "^5.3.6",
+    "url-loader": "^4.1.1",
     "webpack-cli": "^5.0.1"
   }
 }

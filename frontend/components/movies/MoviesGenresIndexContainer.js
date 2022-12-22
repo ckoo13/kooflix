@@ -1,5 +1,6 @@
 import { connect } from "react-redux";
 import { getGenres } from "../../actions/genre_actions";
+import { getVideos } from "../../actions/video_actions";
 import MoviesGenresIndex from './MoviesGenresIndex'
 
 const mapStateToProps = state => {
@@ -11,7 +12,9 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        getGenres: () => dispatch(getGenres())
+        getGenres: () => dispatch(getGenres()),
+        getVideos: () => dispatch(getVideos())
+        
     }
 }
 

@@ -20,7 +20,7 @@ class Movies extends React.Component {
               <NavBarContainer />
               <SpotlightContainer video={this.props.video}/>
               {/* this should be the Genres Index */}
-              <MoviesGenresIndexContainer />
+              <MoviesGenresIndexContainer videos={this.props.videos} genres={this.props.genres} />
           </div>
         )
     }
