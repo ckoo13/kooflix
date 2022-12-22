@@ -1,5 +1,6 @@
 import React from "react";
 import VideoIndexContainer from './VideoIndexContainer';
+import VideoIndex from "./VideoIndex";
 
 class GenresIndex extends React.Component {
     constructor(props){
@@ -15,7 +16,7 @@ class GenresIndex extends React.Component {
             <div>
                 {this.props.genres.map(genre => {
                     return (
-                        <VideoIndexContainer videos={this.props.videos} genre={genre} key={genre.id}/>
+                        <VideoIndex videos={this.props.videos} genre={genre} key={genre.id}/>
                     )
                 })}
             </div>

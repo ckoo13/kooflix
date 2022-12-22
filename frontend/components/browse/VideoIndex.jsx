@@ -10,18 +10,19 @@ import { render } from "react-dom";
 const VideoIndex = (props) => {
 
     const { genre, getVideos, videos} = props;
-
     const [video, setVideos] = useState([]);
-
+    const videoList = selectVideoGenres(genre, videos)
 
     useEffect(() => {
-        const videoList = selectVideoGenres(genre, videos)
         setVideos(videoList);
     }, [])
 
     return (
         <div className="video-index-container">
             <p className="genre-title">{genre.name}</p>
+            {/* <Carousel show={4} slide={2} transition={0.5}>
+        
+            </Carousel> */}
         </div>
     )
 }
@@ -99,14 +100,14 @@ export default connect(mapDispatchToProps)(VideoIndex);
 //     //     const videoList = selectVideoGenres(this.props.genre, this.props.videos)
 
 //     //     {
-//     //         return (
-//     //             <ScrollingCarousel show={4} slide={2} transition={0.5}>
-//     //                 {videoList.map((video, idx) => {
-//     //                     return (
-//     //                         <VideoContainer video={video} key={idx}/>
-//     //                     )
-//     //                 })}
-//     //             </ScrollingCarousel>
+    //         return (
+                // <ScrollingCarousel show={4} slide={2} transition={0.5}>
+                //     {videoList.map((video, idx) => {
+                //         return (
+                //             <VideoContainer video={video} key={idx}/>
+                //         )
+                //     })}
+                // </ScrollingCarousel>
 //     //         )
 //     //     }
 //     // }

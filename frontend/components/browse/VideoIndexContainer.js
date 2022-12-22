@@ -10,10 +10,10 @@ import VideoIndex from "./VideoIndex";
 //     }
 // };
 
-const mapDispatchToProps = dispatch => {
-    return {
-        getVideos: () => dispatch(getVideos())
-    }
-};
+// const mapDispatchToProps = dispatch => {
+//     return {
+//         getVideos: () => dispatch(getVideos())
+//     }
+// };
 
-export default connect(mapDispatchToProps)(VideoIndex);
+// export default connect(mapDispatchToProps)(VideoIndex);
